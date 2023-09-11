@@ -1,0 +1,23 @@
+@import "~taro-ui/dist/style/components/flex.scss";
+@import "~taro-ui/dist/style/components/divider.scss";
+@import "~taro-ui/dist/style/components/icon.scss";
+@import '../../static/style/common.scss';
+
+@import "~taro-ui/dist/style/components/input.scss";
+$border-style: 2px solid #dbdada;
+@mixin base-con {
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+$border-style: 10px solid $bg-grey-color;
+.AuthLogin-wrap{
+    height: 100vh;
+    background-color: #8c8c8c;
+}
+.AuthLogin-btn-con{
+    position: absolute;
+    top: 30%;
+    width: 80%;
+    padding-left: 10%;
+    
+}

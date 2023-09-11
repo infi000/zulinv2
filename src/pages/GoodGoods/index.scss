@@ -1,0 +1,87 @@
+@import '~taro-ui/dist/style/components/flex.scss';
+@import '../../static/style/common';
+
+@mixin base-con {
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+.goodgoods-wrap {
+  background-color: $bg-grey-color;
+  // height: calc(100vh + 680px);
+  height:100vh;
+  overflow: hidden;
+
+}
+.listgoods-wrap {
+  // @include con;
+  @include base-con;
+  width: 100%;
+  box-sizing: border-box;
+  // padding:25px 10px;
+}
+.area-wrap {
+  @include base-con;
+  .area-l {
+    height: 200px;
+  }
+  .area-r-top,
+  .area-r-bottom {
+    height: 100px;
+  }
+}
+.area-wrap-2 {
+  @include base-con;
+  background-color: $bg-grey-color;
+  .area-l {
+    height: 280px;
+    padding-bottom:10px;
+  }
+  .area-l:nth-child(2n){
+    padding-left:5px;
+
+  }
+  .area-l:nth-child(2n-1){
+    padding-right:5px;
+   
+  }
+}
+.banner-wrap {
+  @include con;
+  @include base-con;
+  .banner-con {
+    height: 300px;
+    .swiper-con {
+      height: 100%;
+      width: 100%;
+      border-radius: 6px;
+      text-align: center;
+    }
+  }
+  .banner-grid {
+    font-size: $sm-fontsize;
+  }
+}
+
+
+.tagbar-wrap {
+  @include base-con;
+  .at-tabs__item{
+    font-size:$normal-fontsize!important;
+    color:#000;
+  }
+  .at-tabs__item-underline{
+
+  }
+}
+:global .at-tabs__item{
+  font-size:$normal-fontsize!important;
+  color:#000;
+}
+.icon-box{
+  width:30px;
+  height:30px;
+  float: left;
+  margin-right: 14px;
+  padding-top: 3px;
+}
+

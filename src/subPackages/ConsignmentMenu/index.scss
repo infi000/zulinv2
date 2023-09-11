@@ -1,0 +1,85 @@
+@import "~taro-ui/dist/style/components/flex.scss";
+@import "~taro-ui/dist/style/components/divider.scss";
+@import "~taro-ui/dist/style/components/icon.scss";
+@import '../../static/style/common.scss';
+@mixin base-con {
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+$border-style: 10px solid $bg-grey-color;
+// $border-style: 3px solid #f5f5f5;
+.goods-list-con{
+    width: 100%;
+    .goods-con {
+        padding:20px;
+        // // background-color: red;
+        // padding-bottom:30px;
+        // padding-bottom:30px;
+       
+        .goods-con-top{
+            padding-bottom:10px;
+        
+            .goods-price{
+                font-size:   $normal-fontsize;
+                font-weight: 600;
+            }
+            .goods-saler{
+                text-align: right;
+                padding-right: 20px;
+                font-size:  $sm-fontsize;
+                color:  $text-grey-color;
+            }
+        }
+        .goods-con-mid{
+            width: 100%;
+            height: 300px;
+            padding-bottom:40px;
+            position: relative;
+            .soldout-con{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                
+            }
+        }
+        .goods-con-buttom{
+            @include text2line(2);
+            font-size:  $mini-fontsize;
+        }
+    }
+    .goods-con:nth-of-type(1){
+        border-top:$border-style;
+    }
+    .goods-con:nth-of-type(2){
+        border-top:$border-style;
+    }
+    .goods-con:nth-child(2n){
+        // background-color: yellow;
+        padding-left:10px;
+        border-bottom:$border-style;
+        border-right:$border-style;
+    }
+    .goods-con:nth-child(2n-1){
+        // background-color: green;
+        padding-right:10px;
+        border-left:$border-style;
+        border-right:$border-style;
+        border-bottom:$border-style;
+    }
+
+}
+
+.goodgoods-wrap {
+  background-color: $bg-grey-color;
+  // height: calc(100vh + 680px);
+  height:100vh;
+  overflow: hidden;
+
+}
+.listgoods-wrap {
+  // @include con;
+  @include base-con;
+  width: 100%;
+  box-sizing: border-box;
+  // padding:25px 10px;
+}

@@ -1,0 +1,21 @@
+@import '~taro-ui/dist/style/components/flex.scss';
+@import '../../static/style/common';
+.LeaseOrderList-warp {
+    background-color: $bg-grey-color;
+    width: 100%;
+    height:calc(100vh+10rem);
+    overflow-x: hidden;
+}
+.LeaseOrderList-title {
+    background-color: #fff;
+    border-bottom: 1px solid #DCDFE6;
+}
+
+.title-h1 {
+    margin-top: 0px;
+}
+
+
+.LeaseOrderList-img {
+    margin-top: 20px;
+}

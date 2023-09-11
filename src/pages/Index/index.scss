@@ -1,0 +1,160 @@
+@import '~taro-ui/dist/style/components/flex.scss';
+@import '../../static/style/common';
+
+.index-warp {
+    background-color: $bg-grey-color;
+    width: 100%;
+    height: calc(100vh+10rem);
+    overflow-x: hidden;
+}
+
+.test-h {
+    height: 60vh;
+}
+
+.index-swiper-img {
+    width: 100%;
+}
+
+.index-swiper-desc {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 72%;
+    z-index: 99;
+    justify-content: center;
+    color: #fff;
+}
+
+.index-swiper-btn {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 84%;
+    z-index: 99;
+    justify-content: center;
+    color: #fff;
+}
+
+.index-poster-one {
+
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    .index-poster-one-img {
+        width: 100%;
+        border-radius: 8px;
+    }
+    .index-poster-txt {
+        width: 100%;
+        height: 50px;
+        padding: 10px;
+        font-size: 30px;
+        color: #303133;
+        font-weight: bold;
+    }
+}
+
+.index-video {
+    width: 100%;
+}
+
+.index-club-one {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position:relative;
+    .index-club-one-img {
+        width: 100%;
+        display:block
+    }
+
+    .more {
+        width: 120px;
+        height: 50px;
+        display: flex;
+        color: #fff;
+        position: absolute;
+        // float: right;
+        // z-index: 20;
+        top: 2%;
+        right: 20px;
+        align-items: center;
+        justify-content: center;
+        z-index: 99;
+
+        background-color: rgba($color: #000000, $alpha: 0.3);
+        border-radius: 8px;
+
+    }
+}
+
+.index-club-two {
+
+    // margin-top: 10px;
+    .index-club-one-img {
+        width: 100%;
+    }
+}
+
+.index-goods {
+    margin-bottom: 200px;
+}
+
+.index-goods-warp {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style:none;
+    &::-webkit-scrollbar{
+        display:none; /* ChromeSafari */
+      }
+
+    .goods {
+        width: 40%;
+        margin-left: 15px;
+        background-color: rgb(241, 240, 240);
+        border-radius: 8px;
+        
+        .image {
+            width: 300rpx;
+            height: 300rpx;
+        }
+
+        .title {
+            color: #303133;
+            font-size: 28px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+            font-weight: bold;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .desc {
+            color: #606266;
+            font-size: 20px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+        }
+
+        .money {
+            color: #303133;
+            font-size: 25px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+            font-weight: bold;
+        }
+    }
+}

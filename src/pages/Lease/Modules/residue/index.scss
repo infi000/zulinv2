@@ -1,0 +1,69 @@
+
+
+.Residue-warp {
+    width: 120px;
+    border: 1px solid #DCDFE6;
+    border-radius: 8px;
+    // padding-top: 10px;
+    // padding-bottom: 10px;
+    margin-left: 0.2rem;
+    margin-top: 0rem;
+    margin-bottom: 0.1rem;
+}
+.Residue-warp-selector {
+    width: 120px;
+    border: 3px solid #53a8ff;
+    border-radius: 8px;
+    // padding-top: 10px;
+    // padding-bottom: 10px;
+    margin-left: 0.2rem;
+    margin-top: 0rem;
+    margin-bottom: 0.1rem;
+}
+
+.Residue-warp-disabled {
+    width: 120px;
+    border: 1px solid #e4e7ed;
+    background-color: #f5f7fa;
+    border-radius: 8px;
+    // padding-top: 10px;
+    // padding-bottom: 10px;
+    margin-left: 0.2rem;
+    margin-top: 0rem;
+    margin-bottom: 0.1rem;
+}
+
+.Residue-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // padding-bottom: 10px;
+    color: #606266;
+    background-color: rgba(249, 246, 241, 0.8);
+    color: #E6A23C;
+    font-size: 23px;
+    height: 30px;
+}
+
+.Residue-money {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #909399;
+    font-size: 23px;
+    background-color: rgba(249, 246, 241, 0.8);
+    color: #E6A23C;
+    height: 30px;
+}
+
+.Residue-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // padding-top: 10px;
+    height: 60px;
+    font-size: 30px;
+
+    
+}
+

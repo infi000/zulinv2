@@ -1,0 +1,38 @@
+@import '~taro-ui/dist/style/components/flex.scss';
+@import '../../static/style/common';
+
+@mixin base-con {
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+.reserve-wrap {
+  background-color: $bg-grey-color;
+  height: calc(100vh - 200px);
+  // height: 100vh;
+  overflow: hidden;
+  .reserve-img-con{
+    height: 10rem;
+  }
+}
+.reserve-box {
+  @include con;
+  @include base-con;
+
+  // height: 300px;
+  position: relative;
+  .reserve-box-title {
+    position: absolute;
+    top: 25px;
+    background-color: #ffffff85;
+    color: #000;
+  }
+}
+
+.reserve-list-title {
+  padding: 20px 30px;
+  background-color: #fff;
+  color: #303133;
+  font-weight: 350;
+}
+
+

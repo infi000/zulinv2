@@ -1,0 +1,47 @@
+@import '~taro-ui/dist/style/components/flex.scss';
+@import '../../static/style/common';
+@mixin base-con {
+    background-color: #fff;
+    margin-bottom: 10px;
+  }
+.qrres-wrap {
+    width: 100%;
+    position: relative;
+    padding-bottom: 100px;
+    background-color: $bg-grey-color;
+    padding: 20px 40px;
+    height:100vh;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 10%;
+    color:#000;
+    text-align: left;
+    box-sizing: border-box;
+    overflow-y: scroll;
+
+   .line1{
+    font-size:$normal-fontsize;
+    padding: 30px 0;
+   }
+   .line2{
+       padding: 30px 0;
+    font-size:$big-fontsize;
+    
+   }
+   .line3{
+    font-size:$normal-fontsize;
+    padding: 30px 0;
+
+   }
+   .line3-1{
+    font-size:$sm-fontsize;
+    padding: 30px 0;
+   }
+  }
+  .qrres-set-wrap{
+ padding: 30px 0;
+ .qrres-set-input{
+  margin-bottom: 20px;
+ }
+  }
+  

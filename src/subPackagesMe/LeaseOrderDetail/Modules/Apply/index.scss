@@ -1,0 +1,29 @@
+.Apply-warp {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #EBEEF5;
+
+    .name {
+        display: flex;
+        align-items: center;
+        color: #606266;
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        color: #909399;
+        font-size: 23px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 18px;
+
+        .btn-s {
+            width: 200px;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@import '../../static/style/common.scss';
+@import "~taro-ui/dist/style/components/flex.scss";
+
+.comment-line {
+    background-color: #fff;
+    padding:20px 0;
+    box-sizing: border-box;
+    .comment-line-left{
+        padding-right:20px;
+    }
+    .comment-line-right{
+    }
+    .comment-line-top{
+        font-size: $sm-fontsize;
+        color: $text-grey-color;
+        padding-bottom: 10px;
+    }
+    .comment-line-mid{
+        font-size: $sm-fontsize;
+        @include text2line(5);
+        padding-bottom: 10px;
+    }
+    .comment-line-bottom{
+        font-size:21px;
+        color: $text-grey-color;
+    }
+    border-bottom: 8px solid $bg-grey-color;
+
+}

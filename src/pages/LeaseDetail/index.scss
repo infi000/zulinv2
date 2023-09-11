@@ -1,0 +1,53 @@
+@import '~taro-ui/dist/style/components/flex.scss';
+@import '../../static/style/common';
+
+.lease-detail-warp{
+    background-color: $bg-grey-color;
+    width: 100%;
+    height: calc(100vh+10rem);
+    overflow-x: hidden;
+}
+
+.lease-detail-video {
+    width: 100%;
+}
+
+.lease-detail-club-one {
+    margin-bottom: 10px;
+    position:relative;
+    .lease-detail-club-one-img {
+        width: 100%;
+        display:block
+    }
+
+    .more {
+        width: 120px;
+        height: 50px;
+        display: flex;
+        color: #fff;
+        position: absolute;
+        // float: right;
+        // z-index: 20;
+        top: 2%;
+        right: 20px;
+        align-items: center;
+        justify-content: center;
+        z-index: 99;
+
+        background-color: rgba($color: #000000, $alpha: 0.3);
+        border-radius: 8px;
+
+    }
+}
+
+.lease-detail-subbtn {
+    width: 95%;
+    // position: fixed;
+    // bottom: 100px;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    button{
+        background-color: #53a8ff;
+        color: #fff;
+    }
+}

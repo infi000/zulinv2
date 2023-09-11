@@ -1,0 +1,93 @@
+@import "~taro-ui/dist/style/components/flex.scss";
+@import "~taro-ui/dist/style/components/divider.scss";
+@import "~taro-ui/dist/style/components/icon.scss";
+@import '../../static/style/common.scss';
+@import "~taro-ui/dist/style/components/article.scss";
+
+@import "~taro-ui/dist/style/components/input.scss";
+$border-style: 2px solid #dbdada;
+@mixin base-con {
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+$border-style: 10px solid $bg-grey-color;
+
+.word-wrap{
+    height: 100vh;
+    overflow-y: scroll;
+    padding-bottom: 30px;
+    background-color: #fff;
+    .at-article{
+        margin-bottom: 20px;
+    }
+.at-article__h1{
+    margin-bottom: 20px;
+} /* 一级标题 */
+.at-article__h2 {
+    margin-bottom: 20px;
+}/* 二级标题 */
+.at-article__h3 {
+    margin-bottom: 20px;
+}/* 三级标题 */
+.at-article__info {
+    margin-bottom: 20px;
+}/* 作者信息 */
+.at-article__p {
+    margin-bottom: 20px;
+}/* 段落 */
+.at-article__img {
+    margin-bottom: 20px;
+}/* 图片 */
+}
+
+
+
+.userinfo-wrap {
+  background-color:#fff;
+  // height: calc(100vh + 680px);
+  height:100vh;
+  padding-bottom: 30px;
+  overflow-y: scroll;
+  position: relative;
+  .word-con{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+    z-index: 1000;
+  }
+  .userinfo-form-item{
+    margin-bottom: 20px;
+  }
+  .userinfo-label{
+    font-size: 25px;
+    text-align: left;
+  }
+
+
+}
+
+.myvip-wrap{
+    @include con;
+    background-color: #fff;
+    height: 100%;
+    margin-bottom:  20px;
+}
+.lease-order-pay-protocol{
+    padding: 10px 20px;
+    font-size: 25px;
+    color: #606266;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #fff;
+
+    .href-text {
+        color:#409EFF;
+    }
+}
+

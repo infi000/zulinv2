@@ -1,0 +1,60 @@
+
+
+.LeaseRadio-warp {
+    width: 160px;
+    border: 1px solid #DCDFE6;
+    border-radius: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 0.2rem;
+    margin-top: 0rem;
+    margin-bottom: 0.1rem;
+}
+.LeaseRadio-warp-selector {
+    width: 160px;
+    border: 3px solid #53a8ff;
+    // background-color: #53a8ff;
+    border-radius: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 0.2rem;
+    margin-top: 0rem;
+    margin-bottom: 0.1rem;
+}
+
+.LeaseRadio-name {
+    width: 150px;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    text-align: center;
+    padding: 10px;
+    color: #606266;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 20px;
+}
+
+.LeaseRadio-money {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // color: #909399;
+    color: #E6A23C;
+    font-size: 23px;
+}
+
+.LeaseRadio-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    color: #E6A23C;
+    font-size: 26px;
+
+    .at-icon {
+        margin-right: 10px;
+    }
+}
+

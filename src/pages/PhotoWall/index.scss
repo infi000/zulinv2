@@ -1,0 +1,52 @@
+// .photo-swiper-wrap{
+//     height: 100vh;
+//     width: 100%;
+//     position: relative;
+//     overflow: scroll;
+// }
+
+// .btn-group{
+//     position: fixed;
+//     bottom: 20px;
+//     right: 20px;
+//     background-color: rgba(0, 0, 0, 0.445);
+//     padding: 10px 20px;
+//     border-radius: 10px;
+//     .btn{
+//         font-size: 34px;
+//         color: #fff;
+//     }
+// }
+
+.photo-wrap {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: #000;
+}
+
+.photo-swiper-wrap {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: blue($color: #000000);
+}
+
+.image-wrap{
+    height: 100%;
+    background-size: 100%;
+}
+.goods-img{
+position: absolute;
+
+}
+.goods-boxs{
+    position: absolute;
+    bottom: 0;
+    height:180px;
+    line-height: 180px;
+    background-color: rgba(0, 0, 0, 0.185);
+    color:#fff;
+    text-align: center;
+    width: 100%;
+}

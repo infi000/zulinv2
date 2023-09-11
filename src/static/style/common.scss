@@ -1,0 +1,97 @@
+// 颜色
+$text-grey-color: #c0c0c0;
+$bg-grey-color: #f5f5f5;
+$primary-color: #26a7e2;
+$color-brand: #26a7e2;
+$color-brand-light: #26a7e2;
+$color-brand-dark: #26a7e2;
+
+// $primary-color: yellowgreen;
+// $color-brand: yellowgreen;
+// $color-brand-light: yellowgreen;
+// $color-brand-dark: yellowgreen;
+// 字号
+$big-fontsize: 34px;
+$normal-fontsize: 30px;
+$sm-fontsize: 26px;
+$mini-fontsize: 24px;
+
+@mixin text2line($line) {
+  white-space: pre-line;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+}
+
+@mixin con {
+  padding: 25px 40px;
+  background-color: #fff;
+}
+
+@mixin balance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin textLeft {
+  text-align: left;
+}
+@mixin textRight {
+  text-align: right;
+}
+@mixin textCenter {
+  text-align: center;
+}
+
+.textL {
+  @include textLeft;
+}
+.textR {
+  @include textRight;
+}
+.textC {
+  @include textCenter;
+}
+.page-wrap{
+  height: 100vh;
+  background-color: $bg-grey-color;
+  position: relative;
+}
+
+
+@mixin btn {
+  padding: 4px 20px;
+  background: #000;
+  text-align: center;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size:$normal-fontsize;
+}
+
+.btn-default {
+  @include btn;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #c0c0c0;
+}
+
+.btn {
+  @include btn;
+}
+
+.bottom-wrap{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 40px 0;
+  border-top: 1px solid #ddd;
+
+}

@@ -1,0 +1,16 @@
+@import '~taro-ui/dist/style/components/flex.scss';
+@import '../../static/style/common';
+
+.search-lease-warp{
+    background-color: $bg-grey-color;
+    width: 100%;
+    height: calc(100vh+10rem);
+    overflow-x: hidden;
+}
+
+.search-lease-list-title {
+    padding: 20px 30px;
+    background-color: #fff;
+    color: #303133;
+    font-weight: 350;
+}

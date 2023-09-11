@@ -1,0 +1,57 @@
+@import '~taro-ui/dist/style/components/flex.scss';
+@import '../../static/style/common';
+// @import "~taro-ui/dist/style/components/tabs.scss";
+.comunity-warp {
+background-color: $bg-grey-color;
+  height: calc(100vh - 160px);
+  overflow: hidden;
+//   height:100vh;
+}
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #fff;
+    padding-bottom: 10px;
+    // color:#53a8ff !important;
+    // .at-tabs__item-underline {
+    //     color:#53a8ff !important;
+    // }
+    
+}
+// .at-tabs__item--active {
+//     color:#53a8ff !important;
+// }
+// .community-font-color{
+//     color:#53a8ff !important;
+// }
+// 内容居中显示
+.icon-left {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+.icon-right {
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+}
+
+.content {
+    background-color: #f8fafe;
+    margin-top: 500px;
+}
+
+.fab-btn {
+    position: fixed; 
+    top: 73%;
+    left: 80%;
+    z-index: 11;
+    color: #fff;
+
+    view{
+        background: rgba($color: #000000, $alpha: 0.6);
+    }
+    
+}
+

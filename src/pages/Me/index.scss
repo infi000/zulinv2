@@ -1,0 +1,95 @@
+@import '~taro-ui/dist/style/components/flex.scss';
+@import '../../static/style/common.scss';
+.textL {
+  @include textLeft;
+}
+.textR {
+  @include textRight;
+}
+.textC {
+  @include textCenter;
+}
+
+.me-wrap {
+  background-color: $bg-grey-color;
+  padding-bottom: 200px;
+}
+.my-avatar-con {
+  background-color: #292929;
+  color: #fff;
+  height: 300px;
+  padding: 40px;
+  .my-avatar-top {
+    height: 180px;
+    // background-color: yellowgreen;
+  }
+  .my-avatar-bottom {
+    // height:100px;
+    padding: 16px 0;
+    line-height: 50px;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    font-size: $big-fontsize;
+    // font-weight: bold;
+    text-align: center;
+    .my-avatar-desc {
+      font-size: $sm-fontsize;
+      font-weight: normal;
+    }
+  }
+}
+.order-sales-con {
+  padding: 40px;
+}
+
+.me-con {
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 1px 1px 4px 0px #d0d0d0;
+  margin-bottom: 40px;
+  background-color: #fff;
+  .me-con-top {
+    margin-bottom: 30px;
+    font-size: $normal-fontsize;
+    .textR {
+      color: $text-grey-color;
+      font-size: $sm-fontsize;
+    }
+  }
+  .me-con-mid {
+    font-size: $sm-fontsize;
+    color: $text-grey-color;
+  }
+}
+
+.me-others-con {
+  background-color: #fff;
+  padding: 30px 40px;
+  // border-bottom: 1px solid $bg-grey-color;
+  box-shadow: 1px 1px 4px 0px #d0d0d0;
+  margin-bottom: 10px;
+  position: relative;
+  .hideButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0);
+  }
+  .textL {
+    font-size: $normal-fontsize;
+  }
+  .textR {
+    font-size: $sm-fontsize;
+    color: $text-grey-color;
+  }
+  box-sizing: border-box;
+}
+
+.me-other-wrap {
+  background-color: $bg-grey-color;
+}

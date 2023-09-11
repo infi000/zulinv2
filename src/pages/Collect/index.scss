@@ -1,0 +1,40 @@
+.nomore-line-con{
+    width:60%;
+    margin:0 auto;
+}
+.edit-con{
+    position: fixed;
+    bottom: 0;
+    height:120px;
+    line-height: 120px;
+   left: 0;
+   right: 0;
+    text-align: center;
+    background-color: #fff;
+    
+    .edit-btn{
+        background:gold;
+        text-align: center;
+    }
+    .cancel-btn{
+        background:gold;
+        text-align: center;
+    }
+    .del-btn{
+        background:#ccc;
+        color:#fff;
+        text-align: center;
+    }
+}
+
+.collect-wrap{
+    padding: 0 40px 120px;
+    .item-thumb{
+        width: 160px;
+        height:160px;
+    }
+    .item-content__info-note{
+        margin-top:40px;
+        color: crimson;
+    }
+}

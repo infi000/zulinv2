@@ -1,0 +1,228 @@
+@import '../../static/style/common.scss';
+
+.goodsshow-wrap {
+  background-color: $bg-grey-color;
+  padding-bottom:180px;
+  .goodsshow-con {
+    @include con;
+    margin-bottom: 10px;
+  }
+}
+.buys-wrap{
+  @include con;
+  background-color: #fff;
+  padding-top:50px;
+}
+
+.swiper-con {
+  height: 700px;
+  width: 700px;
+  margin:0 auto;
+  .swiper-img-con {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+  }
+}
+.price-desc-con {
+  width: 100%;
+  text-align: center;
+  .price-con {
+    font-size: 50px;
+    font-weight: bolder;
+  }
+  .desc-con {
+    font-size: $normal-fontsize;
+    @include text2line(2);
+  }
+}
+
+.goods-attr-con {
+  font-size: $normal-fontsize;
+  padding-bottom: 25px;
+  .goods-attr {
+    color: $text-grey-color;
+  }
+  .goods-attr-desc {
+    text-align: right;
+  }
+}
+
+.goods-sale-con {
+  padding: 25px 0;
+  background-color: #fff;
+  margin-bottom: 10px;
+  font-size: $normal-fontsize;
+  .goods-sale-top {
+    padding-bottom: 25px;
+    .goods-sale-count {
+      font-weight: bold;
+    }
+    .goods-sale-all-btn {
+      text-align: right;
+      color: $text-grey-color;
+    }
+  }
+  .goods-sale-mid {
+    font-size: $sm-fontsize;
+    padding-bottom: 0;
+    .goods-sale-record-con {
+      
+      padding-bottom: 10px;
+      .goods-sale-record-l {
+        color: $text-grey-color;
+        @include text2line(1)
+      }
+      .goods-sale-record-m {
+        text-align: center;
+        font-weight: bold;
+      }
+      .goods-sale-record-r {
+        color: $text-grey-color;
+        text-align: right;
+      }
+    }
+  }
+}
+
+.goods-warning-con{
+    overflow: hidden;
+    .goods-warning-title {
+        font-size: $normal-fontsize;
+        font-weight: bold;
+        padding-bottom: 25px;
+    }
+}
+
+.goods-hot-con{
+    .goods-hot-title {
+        font-size: $normal-fontsize;
+        font-weight: bold;
+        padding-bottom: 25px;
+    }
+
+}
+
+@mixin foot-btn($color) {
+  margin-top: 10px;
+  height: 70px;
+  width: 80%;
+  background-color:$color;
+  text-align: center;
+  line-height: 70px;
+  border-radius: 10px;
+}
+.footer-con{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+  border-top:1px solid $bg-grey-color;
+  text-align: center;
+  .sale-btn{
+    display: inline-block;
+   @include foot-btn($color-brand);
+    color:#fff;
+  }
+  .buy-btn{
+    display: inline-block;
+    @include foot-btn($color-brand);
+    color:#fff;
+  }
+  .buy-btn-issaled{
+    display: inline-block;
+    @include foot-btn(#ddd);
+    color:#fff;
+  }
+  .love-btn{
+        // @include foot-btn($color-brand);
+        // color:#fff;
+    width:60px;
+    margin: 20px;
+    height:50px;
+    text-align: center;
+    line-height: 50px;
+    background-color:yellowgreen;
+  }
+}
+
+
+
+@mixin baseSelecotBtn {
+  @include btn;
+  float: left;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  border: 1px solid black;
+  border-radius: 8px;
+  min-width: 100px;
+}
+
+.selecotModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index:1000;
+  .selecotTag{
+    font-size: $normal-fontsize;
+  }
+  .selecotCon {
+    @include con;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 40%;
+    max-height: 80%;
+    background-color: #fff!important;
+    overflow-y: scroll;
+  }
+  .selecotBtn {
+    @include baseSelecotBtn;
+    color: #000;
+    background-color: #fff!important;
+  }
+  .disabled {
+    @include baseSelecotBtn;
+    color: #000;
+    background-color: #ddd!important;
+  }
+  .selecotBtnChoose {
+    @include baseSelecotBtn;
+    color: #fff;
+  }
+  .selecotBtnBuy{
+    @include baseSelecotBtn;
+    color: #fff;
+    float: none;
+    height: 100%;
+    width: 50%;
+    box-sizing: border-box;
+  }
+  .selecotBtnBack{
+    @include baseSelecotBtn;
+    color: #000;
+    background-color: #fff!important;
+    float: none;
+    height: 100%;
+    width: 30%;
+    box-sizing: border-box;
+    background-color: #26a7e2;
+    border-color: #26a7e2;
+  }
+  .selecotItem{
+    margin-bottom: 25px;
+  }
+  .selecotItemBuy{
+    margin-top: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+  }
+}

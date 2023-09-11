@@ -1,0 +1,21 @@
+@import '../../static/style/common.scss';
+@import "~taro-ui/dist/style/components/textarea.scss";
+
+.inputpage-wrap{
+    // background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+   @include con;
+}
+.bottom-wrap{
+    position: absolute;
+    left: 0;
+    right: 0;
+    .bottom-wrap-button{
+        margin-bottom: 20px;
+     }
+}

@@ -1,0 +1,179 @@
+@import '~taro-ui/dist/style/components/flex.scss';
+@import '../../static/style/common';
+.lease-warp{
+    background-color: $bg-grey-color;
+    width: 100%;
+    height:calc(100vh+10rem);
+    overflow-x: hidden;
+}
+
+.lease-title {
+    color: #606266;
+    background-color: #fff;
+    // height: 50px;
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.lease-swiper-img {
+    width: 100%;
+}
+
+.lease-explain {
+    background-color: #fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.lease-rooms {
+    display: flex;
+    flex-direction: row;
+    overflow-x:scroll;
+    width: calc(100% - 2rem);
+    // flex-wrap:nowrap;
+    padding: 21px;
+    -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+}
+.lease-rooms-layout {
+    display: flex;
+    width: 100%;
+    flex-flow:row wrap
+}
+
+.lease-h2 {
+    // border-left: 7px solid red;
+    margin-top: 10px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .lease-h2-icon {
+        height: 38px;
+        width: 10px;
+        border-left: 7px solid #cd8537;
+    }
+}
+
+.lease-selector-date {
+    width: 100%;
+}
+.lease-selector-timer {
+    display: flex;
+    flex-direction: column;
+    overflow-x:scroll;
+    width: calc(100% - 1rem);
+    flex-wrap:nowrap;
+    padding: 21px;
+
+    .lease-selector-timer-num {
+        display: flex;
+        flex-direction: row;
+        color: #303133;
+        // justify-content: center;
+        align-items: center;
+    }
+}
+
+.lease-sub-info {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+        color: #fff;
+        background-color: #000;
+        width: 70%;
+        height: 92px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+   
+}
+
+.sub-btn {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.test-h{
+    height: 30vh;
+}
+
+.lease-selector-res {
+    display: flex;
+    flex-direction: row;
+    width: 99%;
+    height: 100px;
+    background-color: #F2F6FC;
+    border-radius: 8px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+
+    .center-symbol {
+        font-weight: bold;
+        font-size: 28px;
+    }
+
+    .start-time {
+        font-weight: bold;
+        font-size: 26px;
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .start-time-desc {
+            font-size: 20px;
+            font-weight: 100;
+        }
+    }
+    .end-time {
+        font-weight: bold;
+        font-size: 26px;
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .end-time-desc {
+            font-size: 20px;
+            font-weight: 100;
+        }
+    }
+}
+
+.lease-calendar {
+    // width: 100%;
+    z-index: 1000;
+}
+
+.lease-starttimer-subbtn {
+    width: 95%;
+    position: fixed;
+    bottom: 50px;
+    background-color: #53a8ff;
+    color: #fff;
+    z-index: 100;
+}
+.lease-timer-subbtn {
+    width: 95%;
+    // position: fixed;
+    // bottom: 100px;
+    margin-top: 40%;
+    background-color: #53a8ff;
+    color: #fff;
+    // z-index: 100;
+}

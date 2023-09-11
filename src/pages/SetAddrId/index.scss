@@ -1,0 +1,93 @@
+@import '~taro-ui/dist/style/components/flex.scss';
+@import '../../static/style/common.scss';
+.SetAddrId-wrap {
+  background-color: #fff;
+}
+.address-wrap {
+  overflow: hidden;
+  background-color: $color-brand;
+  border-bottom: 1px solid #ddd;
+  .address-con {
+    box-sizing: border-box;
+    width: 86%;
+    background: #fff;
+    float: left;
+    overflow: hidden;
+    padding: 25px;
+
+    .address-con-top {
+      font-size: $normal-fontsize;
+      margin-bottom: 20px;
+      .at-col--auto {
+        margin-right: 10px;
+      }
+    }
+    .address-con-mid {
+      font-size: $sm-fontsize;
+      margin-bottom: 20px;
+      color: $text-grey-color;
+      .addr-text {
+        margin-right: 10px;
+      }
+    }
+
+    .address-con-bottom {
+      font-size: $normal-fontsize;
+
+      margin-bottom: 20px;
+      color: $text-grey-color;
+      .address-default {
+        color: $color-brand;
+      }
+    }
+  }
+  .address-btn-con {
+    width: 14%;
+    color: #fff;
+    float: right;
+    text-align: center;
+    padding-top: 70px;
+    box-sizing: border-box;
+  }
+}
+
+.no-address-con {
+  padding: 25px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  .no-address-text {
+    font-size: medium;
+  }
+  .no-address-edit {
+      font-size: small;
+      color:  $color-brand;;
+  }
+}
+
+.SetAddrId-wrap .at-list__item--thumb .item-thumb {
+    width: 100px;
+    height: 160px;
+    .at-list__item--thumb .item-thumb__info {
+      height: 100%;
+    }
+  }
+.SetAddrId-btn-wrap {
+  position: fixed;
+  bottom: 0px;
+  height: 100px;
+  line-height: 100px;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  .SetAddrId-info {
+    float: left;
+    padding-left: 100px;
+  }
+  .SetAddrId-btn-pay {
+    width: 200px;
+    height: 100px;
+    color: #fff;
+    background-color: $color-brand;
+    float: right;
+  }
+}
