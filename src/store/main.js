@@ -2,14 +2,14 @@
  * @Author: 张驰阳 zhangchiyang@sfmail.sf-express.com
  * @Date: 2023-07-29 23:08:59
  * @LastEditors: 张驰阳 zhangchiyang@sfmail.sf-express.com
- * @LastEditTime: 2023-08-29 23:33:54
+ * @LastEditTime: 2023-09-17 01:23:30
  * @FilePath: /zulin/src/store/main.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 import Taro from '@tarojs/taro';
 import { getWindowHeight } from '../utils/app';
 import { showToast } from '../utils/util';
-import { getUserInfo, getMeInfo } from './services';
+import { getUserInfo, getMeInfo, getMyCard } from './services';
 
 export default {
   namespace: 'main',
@@ -40,9 +40,10 @@ export default {
     *getUserInfo({}, { call, put, select }) {
       const res = yield call(getUserInfo);
       const res2 = yield call(getMeInfo);
+      const res3 = yield call(getMyCard);
       //  verify: 1审核通过
-      const { verify } = {...res2, ...res};
-      yield put({ type: 'updateUserInfo', payload: {...res, ...res2} });
+      const { verify } = {...res2, ...res, ...res3};
+      yield put({ type: 'updateUserInfo', payload: {...res, ...res2, ...res3} });
       if( verify !== '1'){
         setTimeout(() => {
           Taro.navigateTo({ url: "/subPackagesMe/UserInfoManage/index" }).then(r => { 

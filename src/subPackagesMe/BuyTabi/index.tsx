@@ -1,11 +1,13 @@
 import Taro, { useState, useEffect, showToast } from '@tarojs/taro';
 import { View, Image } from '@tarojs/components';
-import { AtButton, AtGrid, AtInput } from 'taro-ui';
+import { AtButton, AtGrid, AtInput, AtRadio } from 'taro-ui';
 
 import { useSelector, useDispatch } from '@tarojs/redux';
-import { getbg, postPay } from './services';
+import { getUserBuycard, getbg, getccCard, postPay } from './services';
 
 import './index.scss';
+import { showErrorToast } from '@/utils/util';
+import { USE_DAY_TYPE } from '@/utils/constants';
 
 
 
@@ -14,6 +16,7 @@ const defaultForm: { [key: string]: any } = {};
 const ConsignmentCreate = () => {
   const dispatch = useDispatch();
   const [bg, setBg] = useState('');
+  const [ccList, setCcList] = useState([]);
   const { categorys } = useSelector((state) => state.ConsignmentCreate);
   // title:商品名称
   // thumbinal:商品预览图,文件域
@@ -31,9 +34,11 @@ const ConsignmentCreate = () => {
     });
   };
   const handleSubmit = () => {
-    // console.log(form);
-    // return
-    postPay({ ...form }).then(d => {
+    if( !!!form.cardid){
+      showErrorToast("请选择购买的次卡类型");
+      return 
+    }
+    getUserBuycard(form).then(d => {
       const { arraydata } = d || {};
       const { nonceStr, timeStamp, signType, paySign } = arraydata || {};
       const pak = arraydata.package;
@@ -56,7 +61,7 @@ const ConsignmentCreate = () => {
           }, 2000);
         },
         fail: function (res) {
-          showToast("购买失败");
+          showErrorToast("购买失败");
           console.log(res)
         }
       })
@@ -80,39 +85,36 @@ const ConsignmentCreate = () => {
       const { pic } = d;
       setBg(pic);
     })
+    getccCard({}).then(d => {
+      const { cards } = d;
+      setCcList(cards);
+    }) 
   }, [])
 
 
   return (
     <View className='goodgoods-wrap'>
       <View className='myvip-wrap'>
-        <Image mode='aspectFit' style='width: 100%;height: 200px;' src={bg} />
-        <AtGrid
-          onClick={(e) => handleUpdateForm({ total: e.key })}
+        <Image mode='aspectFit' style='width: 100%;height: 200px;' src={bg || 'https://beyondplayapi.leclubthallium.com/Public/static/images/defaultcicardbg.jpg'} />
+        {/* <AtGrid
+          onClick={(e) => handleUpdateForm({ cardid: e.key })}
           data={
-            [
-              { value: '100元', key: '100', },
-              { value: '200元', key: '200', },
-              { value: '300元', key: '300', },
-              { value: '500元', key: '500', },
-              { value: '800元', key: '800', },
-              { value: '1000元', key: '1000', },
-            ]
-          } />
+            ccList.map((item:any) => {
+              return { value: `${item.cardname}/${item.price}`, key: item.id }
+            })
+          } /> */}
+          <View>次卡类型:</View>
+                   <AtRadio
+        options={ccList.map((item: any) => ({ label: `${item.cardname}/${item.price}/(${USE_DAY_TYPE[item.usedaytype]})`, value: item.id }))}
+        value={form.cardid}
+        onClick={(e) => handleUpdateForm({ cardid: e })}
+      />
         <View className='at-row  at-row__align--center' style={{ margin: '10px 0'}}>
-          <View className='at-col at-col-1 at-col--auto'>自定义金额:</View>
-          <View className='at-col'>
-            <AtInput
-                name='total'
-                value={form.total}
-                onChange={(e) => handleUpdateForm({ total: e })}
-            />
-          </View>
         </View>
         <View className='edit-btn-wrap'>
           <View className='btn-submit'>
             <AtButton type='primary' size='small' onClick={handleSubmit}>
-              充值
+              购买
             </AtButton>
           </View>
 

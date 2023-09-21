@@ -8,6 +8,7 @@ import Api from '@/config/api';
  */
 export const getUserInfo = (payload?: {}) => request.get(Api.userInfo, payload);
 export const getMeInfo = (payload?: {}) => request.get(Api.meInfo, payload);
+export const getMyCard = (payload?: {}) => request.get(Api.getMyCard, payload);
 
 
 export default {};

@@ -2,7 +2,7 @@ const MOCK = 'http://easy-mock.sftcwl.com/mock/5f6a20a67266ef5678785185/wxschool
 const MOCK2 = 'http://easy-mock.sftcwl.com/mock/5f1a8bf410c3f359faddc7df/test';
 const yjw_test = 'https://dev.tangguostore.com/index.php/MiniApi';
 // const yjw = 'https://dev.tangguostore.com';
-const yjw = 'https://apidev.leclubthallium.com';
+const yjw = 'https://beyondplayapi.leclubthallium.com';
 const community = 'https://heshenghui.zhiheworld.com';
 const WxApiRoot = yjw + '/index.php/MiniApi'; 
 const assetRoot = yjw + '/Public/MiniApi/images'
@@ -143,5 +143,11 @@ export default {
 
   // 设置手机号
   setwxuserphone: WxApiRoot + '/User/setwxuserphone',
-  baseinfo2: WxApiRoot + '/User/baseinfo2'
+  baseinfo2: WxApiRoot + '/User/baseinfo2',
+  getCarddCards: WxApiRoot + '/Card/dcards',
+  getUserBuycard: WxApiRoot + '/User/buycard',
+  getccCard: WxApiRoot + '/Card/ccards',
+  getMyCard: WxApiRoot + '/User/mycard',
+  detailbyccode: WxApiRoot + '/Card/detailbyccode',
+  Cardcheck: WxApiRoot + '/Card/check',
 };

@@ -24,4 +24,6 @@ export const getConsignmenCategorys = (payload: any) => request.get(Api.consignm
 export const createGoods = (payload: any) => request.post(Api.consignmenGoodsadd, payload);
 
 export const getbg = (payload: any) => request.get(Api.getbg, payload);
+export const getCarddCards = (payload: any) => request.get(Api.getCarddCards, payload);
+export const getUserBuycard = (payload: any) => request.get(Api.getUserBuycard, payload);
 export default {};

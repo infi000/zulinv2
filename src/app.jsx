@@ -52,11 +52,13 @@ class App extends Component {
   config = {
     pages: [
         //  'pages/ZcyTest/index',
-        
+
         // 'pages/Consignment/index',
         // 'pages/ConsignmentShow/index',
         'pages/Main/index',
         'pages/GoodGoods/index',
+        'pages/PicketResult/index',
+        'pages/PicketMallResult/index',
 
         // 'pages/Index/index',
       'pages/TaskList/index',
@@ -74,7 +76,6 @@ class App extends Component {
       'pages/Community/AddVideo/index',
       // 'pages/Choujiang/index',
       'pages/SetAddrId/index',
-      'pages/PicketResult/index',
       // 'pages/PicketQr/index',
       'pages/BuyPage/index',
       // 'pages/Kefu/index',
@@ -92,7 +93,7 @@ class App extends Component {
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: '西塔科学探索俱乐部',
+      navigationBarTitleText: '比莱童园',
       navigationBarTextStyle: 'black',
     },
     subpackages: [

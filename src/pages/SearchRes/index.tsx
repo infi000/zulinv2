@@ -21,7 +21,7 @@ const SearchRes = () => {
         setFormatList(goods || []);
       });
       Taro.setNavigationBarTitle({
-        title: key || '西塔科学探索俱乐部',
+        title: key || '比莱童园',
       });
     }else{
       const { key,title } = params;
@@ -30,7 +30,7 @@ const SearchRes = () => {
         setFormatList(goods || []);
       });
       Taro.setNavigationBarTitle({
-        title: title || '西塔科学探索俱乐部',
+        title: title || '比莱童园',
       });
     }
    

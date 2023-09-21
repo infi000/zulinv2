@@ -1,3 +1,11 @@
+/*
+ * @Author: 张驰阳 zhangchiyang@sfmail.sf-express.com
+ * @Date: 2023-08-23 23:27:08
+ * @LastEditors: 张驰阳 zhangchiyang@sfmail.sf-express.com
+ * @LastEditTime: 2023-09-20 23:54:08
+ * @FilePath: /zulinv2/src/utils/auth.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import Taro from '@tarojs/taro';
 import { getJscode2session, saveUserData, setwxuserphone } from '@/services/user';
 
@@ -33,10 +41,9 @@ export const logIn = (params: { dispatch: any; SuccessCb?: Function; errorCb?: F
                       //用户登录凭证（有效期五分钟）。开发者需要在开发者服务器后台调用 api，使用 code 换取 openid 和 session_key 等信息
                       console.log("登录的code:", rp.code)
                       // 调用后端接口传入手机号信息
-                      
                       setwxuserphone({
                         jscode: rp.code,
-                        encryptedData: phone.encryptedData,
+                        encryptedData: encodeURIComponent(phone.encryptedData),
                         iv: phone.iv,
                         openid: openid
                       })

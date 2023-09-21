@@ -21,12 +21,14 @@ sname:支持yearbg和tabg；yearbg:年会员背景；tabg:铊币背景
 
  */
 export const getbg = (payload: any) => request.get(Api.getbg, payload);
+export const getccCard = (payload: any) => request.get(Api.getccCard, payload);
 export const getConsignmenCategorys = (payload: any) => request.get(Api.getbg, payload);
 
 /**
  * 1.1 寄卖商品列表goods
  */
 export const createGoods = (payload: any) => request.post(Api.consignmenGoodsadd, payload);
+export const getUserBuycard = (payload: any) => request.get(Api.getUserBuycard, payload);
 
 
 export default {};

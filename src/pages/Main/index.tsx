@@ -27,7 +27,7 @@ const Main = (props) => {
     //   console.log(res.target)
     // }
     return {
-      title: '西塔科学探索俱乐部',
+      title: '比莱童园',
       path: '/pages/Main/index'
     }
   })

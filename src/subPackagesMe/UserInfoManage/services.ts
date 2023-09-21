@@ -49,7 +49,7 @@ export const createUserInfo = (payload: any) => request.post(Api.userInfoModify,
 export const userAgreement = (payload: any) => request.post(Api.userAgreement, payload);
 export const uploadbase64 = (payload: any) => request.post(Api.uploadbase64, payload);
 
-export const getMeInfo = (payload?: {}) => request.get(Api.baseinfo2, payload);
+export const getMeInfo = (payload?: {}) => request.get(Api.meInfo, payload);
 export const agreementregisterinfo = (payload?: {}) => request.get(Api.agreementregisterinfo, payload);
 
 export default {};

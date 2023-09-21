@@ -25,7 +25,7 @@ const GoodsShow = () => {
     dispatch({ type: 'goodsShow/getRelatedGoods' });
     dispatch({ type: 'goodsShow/getIsfav' });
     Taro.setNavigationBarTitle({
-      title:title||'西塔科学探索俱乐部'
+      title:title||'比莱童园'
     });
     (Taro as any).showShareMenu({
       withShareTicket: true,
@@ -41,7 +41,7 @@ const GoodsShow = () => {
     // }
     return {
       showShareItems: ['wechatFriends', 'wechatMoment'],
-      title: title || '西塔科学探索俱乐部',
+      title: title || '比莱童园',
       path: '/pages/GoodsShow/index?gid=' + gid + '&title=' + title ,
       // imageUrl
     }

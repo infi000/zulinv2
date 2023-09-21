@@ -21,7 +21,7 @@ const SortPage = () => {
       setFormatList(goods || []);
     });
     Taro.setNavigationBarTitle({
-      title: title || '西塔科学探索俱乐部',
+      title: title || '比莱童园',
     });
   });
   const onScrollToLower = (e) => {

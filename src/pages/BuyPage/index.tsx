@@ -14,7 +14,7 @@ const BuyPage = () => {
   const [addrList, setAddrList] = useState([]);
   const [orderData, setOrderData] = useState({});
   const [defaultAddr, setDefaultAddt]: [false | any, Function] = useState(false);
-  const [payType, setPayType] = useState('ta');
+  const [payType, setPayType] = useState('miniwxpay');
   const router = useRouter();
   useDidShow(() => {
     const { params } = router;
@@ -102,7 +102,7 @@ const BuyPage = () => {
         </View>
         <AtRadio
           options={[
-            { label: '铊币', value: 'ta', },
+            // { label: '铊币', value: 'ta', },
             { label: '微信支付', value: 'miniwxpay' },
           ]}
           value={payType}

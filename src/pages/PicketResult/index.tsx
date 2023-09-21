@@ -1,40 +1,46 @@
+/*
+ * @Author: 张驰阳 zhangchiyang@sfmail.sf-express.com
+ * @Date: 2023-06-25 13:18:12
+ * @LastEditors: 张驰阳 zhangchiyang@sfmail.sf-express.com
+ * @LastEditTime: 2023-09-21 00:14:38
+ * @FilePath: /zulinv2/src/pages/PicketResult/index.tsx
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import Taro, { useDidShow, useRouter, useState } from '@tarojs/taro';
 import { View, Button } from '@tarojs/components';
-import { picketCheck, setpicketduration } from './services';
+import { detailbyccode, Cardcheck } from './services';
 import './index.scss';
-import { showErrorToast } from '@/utils/util';
+import { formatDate, showErrorToast } from '@/utils/util';
 import { get } from 'lodash';
 import { AtButton, AtInputNumber } from 'taro-ui';
+import { CARD_TYPE, USE_DAY_TYPE } from '@/utils/constants';
 
 
 const PicketResult = () => {
-  const [picketInfo, SetPicketInfo] = useState({});
+  const [picketInfo, SetPicketInfo] = useState<any>({});
   const router = useRouter();
   const [form, setForm] = useState({ duration: 3 });
-  const handleUpdateForm = (opt: any) => {
-    console.log(opt);
-    setForm((params) => {
-      return { ...params, ...opt };
-    });
+  const handleBack = (opt: any) => {
+    Taro.reLaunch({ url: '/pages/Main/index' })
   };
 
   const handleSubmit = async () => {
     const { params } = router;
-    const { data } = params;
+    const { ccode = '' } = params;
     try {
-      const res = await setpicketduration({ 
-        pid: get(picketInfo, ['p', 'id'], ''), ...form });
-        showErrorToast('设置成功')
+      const { card } = await Cardcheck({ccode});
+      SetPicketInfo(card || {});
+      showErrorToast('消费成功')
     } catch (error) {
       showErrorToast(error.toString())
     }
   }
   useDidShow(async () => {
     const { params } = router;
-    const { data } = params;
+    const { ccode = '' } = params;
     try {
-      const res = await picketCheck({ data });
-      SetPicketInfo(res);
+      const { card } = await detailbyccode({ ccode });
+      SetPicketInfo(card);
     } catch (error) {
       showErrorToast(error.toString())
     }
@@ -42,30 +48,19 @@ const PicketResult = () => {
   });
   return (
     <View className='qrres-wrap'>
-      <View className='line2'>验票结果:{get(picketInfo, ['msg'], '-')}</View>
-
-      <View className='line1'>活动id:{get(picketInfo, ['p', 'id'], '-')}</View>
-      <View className='line1'>活动:{get(picketInfo, ['p', 'title'], '-')}</View>
-      <View className='line1'>开场时间:{get(picketInfo, ['p', 'stime'], '-')}</View>
-      <View className='line1'>结束时间:{get(picketInfo, ['p', 'etime'], '-')}</View>
-      <View className='line3'>
-        检票历史：
-        {!Array.isArray(picketInfo.checks) ? '暂无' : picketInfo.checks.map((item) => {
-          return <View className='line3-1'>{item['checktime']}检票成功</View>
-        })}
-      </View>
+      <View className='line2'>status:{picketInfo.status}</View>
+      <View className='line1'>id:{picketInfo.id}</View>
+      <View className='line1'>卡类型:{CARD_TYPE[picketInfo.cardtype]}</View>
+      <View className='line1'>有效期:{formatDate(picketInfo.cardexpired)}</View>
+      <View className='line1'>开始时间:{formatDate(picketInfo.cardstarttime)}</View>
+      <View className='line1'>剩余次数:{picketInfo.leftcount}</View>
+      <View className='line1'>总次数:{picketInfo.totalcount}</View>
+      <View className='line1'>totalprice:{picketInfo.totalprice}</View>
+      <View className='line1'>使用日类型:{USE_DAY_TYPE[picketInfo.usedaytype]}</View>
+      <View className='line1'>备注:{picketInfo.remark}</View>
       <View className='qrres-set-wrap'>
-        设置检票时长
-        <AtInputNumber
-          className='qrres-set-input'
-          min={3}
-          max={12}
-          step={1}
-          value={form.duration}
-          onChange={(e) => handleUpdateForm({ duration: e })}
-          type={'number'}
-        />
-           <AtButton type='primary' size='normal' onClick={handleSubmit}>确定</AtButton>
+           <AtButton type='primary' size='normal' onClick={handleSubmit} className='picket-btn'>确定</AtButton>
+           <AtButton size='normal' onClick={handleBack}>返回</AtButton>
       </View>
 
 

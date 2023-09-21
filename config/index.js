@@ -1,5 +1,5 @@
 const config = {
-  projectName: '西塔科学探索俱乐部',
+  projectName: '比莱童园',
   date: '2020-6-21',
   designWidth: 750,
   deviceRatio: {

@@ -1,14 +1,15 @@
 import Taro, { scope, Component, useState, useDidShow, useEffect, showToast } from '@tarojs/taro';
-import { View, Block, ScrollView, Image } from '@tarojs/components';
+import { View, Block, ScrollView, Image, Picker } from '@tarojs/components';
 import { AtButton, AtImagePicker, AtInput, AtInputNumber, AtList, AtListItem, AtRadio } from 'taro-ui';
 import Uploader from '@/components/Uploader';
 
 import { useSelector, useDispatch } from '@tarojs/redux';
-import { createGoods, getClassifySearch, getbg, postPay } from './services';
+import { createGoods, getCarddCards, getClassifySearch, getUserBuycard, getbg, postPay } from './services';
 import { isArray } from 'lodash';
 
 import './index.scss';
-import { showSuccessToast } from '@/utils/util';
+import { showErrorToast, showSuccessToast } from '@/utils/util';
+import { USE_DAY_TYPE } from '@/utils/constants';
 
 
 
@@ -20,6 +21,7 @@ const ConsignmentCreate = () => {
 
   const [form, setForm] = useState(defaultForm);
   const [bg, setBg] = useState('');
+  const [dCards , setDCards] = useState([]);
 
   const handleUpdateForm = (opt: any) => {
     console.log(opt);
@@ -30,7 +32,11 @@ const ConsignmentCreate = () => {
   const handleSubmit = () => {
     // console.log(form);
     // return
-    postPay(form).then(d => {
+    if( !!!form.cardid){
+      showErrorToast("请选择购买的会员类型");
+      return 
+    }
+    getUserBuycard(form).then(d => {
       const { arraydata } = d || {};
       const { nonceStr, timeStamp, signType, paySign } = arraydata || {};
       const pak = arraydata.package;
@@ -53,7 +59,7 @@ const ConsignmentCreate = () => {
           }, 2000);
         },
         fail: function (res) {
-          showToast("购买失败");
+          showErrorToast("购买失败");
           console.log(res)
         }
       })
@@ -67,10 +73,19 @@ const ConsignmentCreate = () => {
     });
     return;
   };
+
+  const handleCardsChange = (e) => {
+    console.log(e);
+    handleUpdateForm({ cardid: e})
+  }
   useEffect(() => {
     getbg({ sname: 'yearbg' }).then((d) => {
       const { pic } = d;
       setBg(pic);
+    })
+    getCarddCards({}).then((d) => {
+      const { cards } = d;
+      setDCards(cards || []);
     })
     dispatch({ type: 'ConsignmentCreate/getConsignmenCategorys' });
   }, [])
@@ -79,16 +94,16 @@ const ConsignmentCreate = () => {
     <View className='goodgoods-wrap'>
       <View className='myvip-wrap'>
         <View style={{ height: '500px', lineHeight: '500px', textAlign: 'center' }}>
-          <Image style='width: 100%;height: 100%;' src={bg} />
+          <Image style='width: 100%;height: 100%;' src={bg || 'https://beyondplayapi.leclubthallium.com/Public/static/images/defaultdatecardbg.jpg'} />
         </View>
         <View className='at-row  at-row__align--center' style={{ margin: '10px 0'}}>
-          <View className='at-col at-col-1 at-col--auto'>邀请码:</View>
+          <View className='at-col at-col-1 at-col--auto'>会员类型:</View>
           <View className='at-col'>
-             <AtInput
-              className='goods-input'
-              name='key'
-              onChange={(e) => handleUpdateForm({ key: e })}
-            />
+              <AtRadio
+        options={dCards.map((item: any) => ({ label: `${item.cardname}/${item.price}/(${USE_DAY_TYPE[item.usedaytype]})`, value: item.id }))}
+        value={form.cardid}
+        onClick={handleCardsChange}
+      />
           </View>
         </View>
         <View className='edit-btn-wrap'>

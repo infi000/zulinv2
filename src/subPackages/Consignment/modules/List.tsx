@@ -23,7 +23,7 @@ const List = () => {
     try {
       Taro.navigateTo({ url: '/subPackages/ConsignmentShow/index?gid=' + id + '&title=' + title });
     } catch (error) {
-      Taro.navigateTo({ url: '/subPackages/ConsignmentShow/index?gid=' + id + '&title=西塔科学探索俱乐部' });
+      Taro.navigateTo({ url: '/subPackages/ConsignmentShow/index?gid=' + id + '&title=比莱童园' });
     }
   };
 

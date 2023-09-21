@@ -2,7 +2,7 @@
  * @Author: 张驰阳 zhangchiyang@sfmail.sf-express.com
  * @Date: 2023-07-29 23:08:59
  * @LastEditors: 张驰阳 zhangchiyang@sfmail.sf-express.com
- * @LastEditTime: 2023-08-11 00:32:23
+ * @LastEditTime: 2023-09-20 23:47:14
  * @FilePath: /zulin/src/pages/PicketQr/index.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -50,7 +50,7 @@ const PicketQe = () => {
       const qrcode_w = 300 / rate;
 
       const codeCon = res['pickets'][0]['codecontent'];
-      const qrText = "/pages/PicketResult/index?data=" + codeCon;
+      const qrText = "/pages/PicketMallResult/index?data=" + codeCon;
 
       const q = new QRCode('canvas', {
         // usingIn: this,
