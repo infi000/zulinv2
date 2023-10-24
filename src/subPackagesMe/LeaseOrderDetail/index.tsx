@@ -47,7 +47,7 @@ const LeaseOrder = () => {
                 <Tools title={"项目名称："} name={orderInfo.prebook.eptitle + " " + orderInfo.prebook.epprice + "*"} num={parseInt(orderInfo.prebook.duration) / 60} price={orderInfo.prebook.eptotalprice}></Tools>
                 <Tools title={"门  票："} name={orderInfo.prebook.etitle + "*"} num={parseInt(orderInfo.prebook.duration) / 60} price={orderInfo.deposit}></Tools>
                 {orderInfo.prebook.tools.map((item, index) => (
-                    <Tools title={"工具佣金："} key={index} name={item.title} num="" price={item.price}></Tools>
+                    <Tools title={"服务佣金："} key={index} name={item.title} num="" price={item.price}></Tools>
                 ))}
             </View>
             <View className='LeaseOrder-sale'>

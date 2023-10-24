@@ -142,7 +142,7 @@ export default {
   setpicketduration:  WxApiRoot + '/Picket/setpicketduration', //   8.    签署协议agreement
 
   // 设置手机号
-  setwxuserphone: WxApiRoot + '/User/setwxuserphone',
+  setwxuserphone: WxApiRoot + '/User/setwxuserphoneex',
   baseinfo2: WxApiRoot + '/User/baseinfo2',
   getCarddCards: WxApiRoot + '/Card/dcards',
   getUserBuycard: WxApiRoot + '/User/buycard',

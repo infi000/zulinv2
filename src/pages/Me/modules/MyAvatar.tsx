@@ -2,13 +2,13 @@
  * @Author: 张驰阳 zhangchiyang@sfmail.sf-express.com
  * @Date: 2023-08-10 23:47:55
  * @LastEditors: 张驰阳 zhangchiyang@sfmail.sf-express.com
- * @LastEditTime: 2023-09-21 00:00:51
+ * @LastEditTime: 2023-09-26 00:35:52
  * @FilePath: /zulin/src/pages/Me/modules/MyAvatar.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 import Taro from '@tarojs/taro';
 import { View, Button, Block, Swiper, SwiperItem, Image } from '@tarojs/components';
-import { AtAvatar } from 'taro-ui';
+import { AtAvatar, AtModal, AtModalAction, AtModalContent, AtModalHeader } from 'taro-ui';
 import { useSelector, useDispatch } from '@tarojs/redux';
 
 import { logIn } from '@/utils/auth';
@@ -119,7 +119,7 @@ const MyAvatar = () => {
         )}
       </View>
       {
-        <View className='Swiper-con'>
+        <View className='Swiper-con' style={{ display: !Array.isArray(userInfo.cards) || userInfo.cards.length === 0 ? 'none' : '' }}>
 
 
           <Swiper
@@ -150,16 +150,19 @@ const MyAvatar = () => {
           </Swiper>
         </View>
       }
-      {/* <View className='at-row at-row--wrap  my-avatar-bottom'>
-        <View className='at-col at-col-6'>
-          <View>{userInfo.ta || '0'}</View>
-          <View className='my-avatar-desc'>我的铊币</View>
-        </View>
-        <View className='at-col at-col-6'>
-          <View>lv:{userInfo.level} ({userInfo.levelscore || '-'}分)</View>
-          <View className='my-avatar-desc'>等级积分</View>
-        </View>
-      </View> */}
+      {
+        isLogIn &&   <AtModal isOpened={userInfo.isbindphone == 0}>
+        <AtModalHeader>获取您的手机号</AtModalHeader>
+        <AtModalContent>
+          <View style={{ textAlign: 'center'}}>比莱童园申请获取并验证您的手机号</View>
+        </AtModalContent>
+        <AtModalAction>
+           <Button>取消</Button> 
+           <Button open-type="getPhoneNumber" onGetPhoneNumber={getPhoneNumber} >确定</Button>
+         </AtModalAction>
+      </AtModal>
+      }
+    
     </View>
   );
 };

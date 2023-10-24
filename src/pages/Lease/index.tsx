@@ -24,10 +24,10 @@ const Lease = () => {
         { num: '可约', money: 800, timer: "15:00", status: 'Residue-warp' },
         { num: '可约', money: 800, timer: "16:00", status: 'Residue-warp' },
         { num: '可约', money: 800, timer: "17:00", status: 'Residue-warp' },
-        { num: '可约', money: 800, timer: "18:00", status: 'Residue-warp' },
-        { num: '可约', money: 800, timer: "19:00", status: 'Residue-warp' },
-        { num: '可约', money: 800, timer: "20:00", status: 'Residue-warp' },
-        { num: '可约', money: 800, timer: "21:00", status: 'Residue-warp' },
+        // { num: '可约', money: 800, timer: "18:00", status: 'Residue-warp' },
+        // { num: '可约', money: 800, timer: "19:00", status: 'Residue-warp' },
+        // { num: '可约', money: 800, timer: "20:00", status: 'Residue-warp' },
+        // { num: '可约', money: 800, timer: "21:00", status: 'Residue-warp' },
         // { num: '可约', money: 800, timer: "22:00", status: 'Residue-warp' }
     ];
 
@@ -154,6 +154,7 @@ const Lease = () => {
 
         setTools([..._tools]);
         setToolBox(tool);
+        timerChange(Number(tool.duration))
         // 获取工具箱工具信息
         getToolService({ tbid: tool.id }).then((res) => {
             setTool(res.tools);
@@ -467,7 +468,7 @@ const Lease = () => {
 
             <View className='at-article lease-title'>
                 <View className='at-article__h2 lease-h2'>
-                    <View className='lease-h2-icon'></View>工具套装
+                    <View className='lease-h2-icon'></View>套餐
                 </View>
                 <View className='lease-rooms'>
                     {tools.map((item, index) => (
@@ -513,6 +514,7 @@ const Lease = () => {
                             step={1}
                             value={timer}
                             onChange={timerChange}
+                            disabled
                         />
                         <View>（小时）</View>
                     </View>
@@ -585,6 +587,7 @@ const Lease = () => {
                             max={maxAtInputNumber}
                             step={1}
                             value={timer}
+                            disabled
                             onChange={timerChange}
                         />
                         <View>（小时）</View>

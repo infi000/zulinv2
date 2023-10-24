@@ -5,7 +5,6 @@ import { View, Swiper, SwiperItem, Image, Button } from '@tarojs/components';
 import { useSelector, useDispatch } from '@tarojs/redux';
 import GoodsList from '@/components/GoodsList';
 import { isArray, toNumber, slice, isString } from 'lodash';
-import { logIn } from '@/utils/auth';
 
 import '../index.scss';
 import SelecotModall from './SelecotModall';

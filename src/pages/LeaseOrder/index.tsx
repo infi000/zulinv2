@@ -531,19 +531,19 @@ const LeaseOrder = () => {
                 </View>
             </View>
             <View className='LeaseOrder-tools'>
-                <Tools title={"项目名称："} name={orderInfo.prebook.eptitle + " " + orderInfo.prebook.epprice + "*"} num={parseInt(orderInfo.prebook.duration) / 60 > 3?3:parseInt(orderInfo.prebook.duration) / 60} price={orderInfo.prebook.eptotalprice}></Tools>
-                <Tools title={"门  票："} name={orderInfo.prebook.etitle + "*"} num={3} price={orderInfo.deposit}></Tools>
+                {/* <Tools title={"项目名称："} name={orderInfo.prebook.eptitle + " " + orderInfo.prebook.epprice + "*"} num={parseInt(orderInfo.prebook.duration) / 60 > 3?3:parseInt(orderInfo.prebook.duration) / 60} price={orderInfo.prebook.eptotalprice}></Tools> */}
+                {/* <Tools title={"门  票："} name={orderInfo.prebook.etitle + "*"} num={3} price={orderInfo.deposit}></Tools> */}
                 {orderInfo.prebook.tools.map((item, index) => (
-                    <Tools title={"工具佣金："} key={index} name={item.title} num="" price={item.price}></Tools>
+                    <Tools title={"服务佣金："} key={index} name={item.title} num="" price={item.price}></Tools>
                 ))}
             </View>
-            <View className='LeaseOrder-sale'>
+            {/* <View className='LeaseOrder-sale'>
                 <View className='title'>年卡会员</View>
                 <Tools title={""} key={101} name={"门票减免"} num="" price={"-"+orderInfo.yearsubtract} pricecolor='red'></Tools>
                 <Tools title={""} key={101} name={"项目减免"} num="" price={"-"+orderInfo.discount} pricecolor='red'></Tools>
-            </View>
+            </View> */}
             {/*  TODO ostatus >= 1  */}
-            {orderInfo.ostatus >= 0 ? (
+            {/* {orderInfo.ostatus >= 0 ? (
                 <View className='LeaseOrder-people'>
                     <View className='title'>项目合作</View>
                     <View className='start-people'>
@@ -561,8 +561,8 @@ const LeaseOrder = () => {
                     </View>
 
                 </View>
-            ) : ''}
-            <View className='LeaseOrder-code'>
+            ) : ''} */}
+            {/* <View className='LeaseOrder-code'>
                 {orderInfo.ostatus == 0 ? (
                     <View className='title'>扫码即可完成支付</View>
                 ) : (
@@ -575,7 +575,7 @@ const LeaseOrder = () => {
                     </View>
                 ) : ''}
 
-            </View>
+            </View> */}
             {orderInfo.ostatus == 0 && router.params.identity == 'my' ? (
                 <View>
                     <View className='lease-order-countdown'>
@@ -588,7 +588,7 @@ const LeaseOrder = () => {
                         />
                     </View>
                     <View className='lease-order-pay-selector'>
-                        <AtSwitch class='switch' border={false} title='铊币支付' checked={isTBPay} color="#45AD21" onChange={isTbPayChange} />
+                        {/* <AtSwitch class='switch' border={false} title='铊币支付' checked={isTBPay} color="#45AD21" onChange={isTbPayChange} /> */}
                     </View>
                     <View className='lease-order-pay-protocol'>
                         <Radio onClick={agreePayProtocol} checked={payProtocol}></Radio>
@@ -615,7 +615,7 @@ const LeaseOrder = () => {
                     <Button  onClick={applyJoinSelectFunc} type='primary'>申请加入</Button>
                 </View>
              ) : ''} 
-
+{/* 
             {orderInfo.ostatus == 1 && router.params.identity == 'my' ? (
                 <View className='LeaseOrder-footer-manage'>
                     <View className='foot-btn-q'>
@@ -632,7 +632,7 @@ const LeaseOrder = () => {
                         </Button>
                     </View>
                 </View>
-            ) : ''}
+            ) : ''} */}
 
 
 
