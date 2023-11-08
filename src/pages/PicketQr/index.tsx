@@ -2,7 +2,7 @@
  * @Author: 张驰阳 zhangchiyang@sfmail.sf-express.com
  * @Date: 2023-07-29 23:08:59
  * @LastEditors: 张驰阳 zhangchiyang@sfmail.sf-express.com
- * @LastEditTime: 2023-09-20 23:47:14
+ * @LastEditTime: 2023-11-08 23:46:45
  * @FilePath: /zulin/src/pages/PicketQr/index.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -82,7 +82,7 @@ const PicketQe = () => {
         
         </View>
         <canvas class='canvas' canvas-id='canvas' bindlongtap='save'></canvas>
-        <View className='qr-line1'>扫码关注</View>
+        <View className='qr-line1'>扫码验票</View>
         {/* <View className='qr-title'>TITLE</View> */}
         <View className='qr-line2'>票务名称：{info.title?`《${info.title}》`: ''}</View>
         <View className='qr-line2'>购买时间：{info.createtime}</View>

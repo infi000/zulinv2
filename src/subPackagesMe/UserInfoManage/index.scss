@@ -43,12 +43,24 @@ $border-style: 10px solid $bg-grey-color;
 
 
 .userinfo-wrap {
-  background-color:#fff;
+  background-color:#f1f1f1;
   // height: calc(100vh + 680px);
   height:100vh;
   padding-bottom: 30px;
   overflow-y: scroll;
   position: relative;
+  .myvip-card{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    .at-input{
+        text-align: right;
+        input {
+            font-size: 24px;
+        }
+    }
+  }
   .word-con{
     position: absolute;
     top:0;
@@ -71,7 +83,7 @@ $border-style: 10px solid $bg-grey-color;
 
 .myvip-wrap{
     @include con;
-    background-color: #fff;
+    background-color: #f1f1f1;
     height: 100%;
     margin-bottom:  20px;
 }
@@ -91,3 +103,58 @@ $border-style: 10px solid $bg-grey-color;
     }
 }
 
+.address-edit-wrap{
+    position: relative;
+    padding-bottom: 200px;
+}
+
+.address-con{
+    padding:25px;
+    border-bottom: 1px solid #ddd;
+    .address-con-top{
+        font-size: $normal-fontsize;
+        margin-bottom: 20px;
+        .at-col--auto{
+            margin-right:10px;
+        }
+    }
+    .address-con-mid{
+        font-size: $sm-fontsize;
+        margin-bottom: 20px;
+        color:$text-grey-color;
+        .addr-text{
+            margin-right: 10px;
+        }
+    }
+    .address-con-bottom{
+        font-size: $normal-fontsize;
+
+        margin-bottom: 20px;
+        color:$text-grey-color;
+       .address-default{
+           color:$color-brand;
+       }
+
+    }
+
+}
+
+.addnew-wrap{
+    background-color: #fff;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    .addnew-btn-top{
+        margin-bottom: 20px;
+    }
+}
+
+.edit-btn-wrap{
+    width: 100%;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    .btn-submit{
+        margin-bottom: 20px;
+    }
+}

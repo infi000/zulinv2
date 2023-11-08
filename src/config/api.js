@@ -150,4 +150,6 @@ export default {
   getMyCard: WxApiRoot + '/User/mycard',
   detailbyccode: WxApiRoot + '/Card/detailbyccode',
   Cardcheck: WxApiRoot + '/Card/check',
+  Addchild: WxApiRoot + '/User/addchild',
+  getChildrens: WxApiRoot + '/User/childrens',
 };

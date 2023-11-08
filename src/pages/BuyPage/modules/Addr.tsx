@@ -1,3 +1,11 @@
+/*
+ * @Author: 张驰阳 zhangchiyang@sfmail.sf-express.com
+ * @Date: 2023-06-25 13:18:12
+ * @LastEditors: 张驰阳 zhangchiyang@sfmail.sf-express.com
+ * @LastEditTime: 2023-11-09 00:02:43
+ * @FilePath: /zulinv2/src/pages/BuyPage/modules/Addr.tsx
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import Taro from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
 import '../index.scss';
@@ -37,9 +45,9 @@ const Addr = (props: IProp) => {
       ) : (
         <View className='no-address-con'>
           <View className='no-address-text'>
-            暂无默认地址{' '}
+            默认到店自取或
             <Text className='no-address-edit' onClick={handleGoTo}>
-              点击编辑
+              点击编辑收货地址
             </Text>
           </View>
          

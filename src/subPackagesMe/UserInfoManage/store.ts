@@ -1,6 +1,14 @@
+/*
+ * @Author: 张驰阳 zhangchiyang@sfmail.sf-express.com
+ * @Date: 2023-07-29 23:08:59
+ * @LastEditors: 张驰阳 zhangchiyang@sfmail.sf-express.com
+ * @LastEditTime: 2023-11-07 00:42:57
+ * @FilePath: /zulinv2/src/subPackagesMe/UserInfoManage/store.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import delay from '@/utils/delay';
 import { isArray, toNumber } from 'lodash';
-import { getConsignmenCategorys, getSearchGoods } from './services';
+import { Addchild, getChildren, getConsignmenCategorys, getSearchGoods } from './services';
 const PAGE_LEN = 20; // 每页个数
 
 interface IState {
@@ -13,6 +21,8 @@ interface IState {
   goodsDataParams: ISearchGoodsParams;
   listScroll: boolean; // 废弃
   categorys: any[];
+  modal: IModal;
+  children:any[]
 }
 
 const defaultState: IState = {
@@ -20,6 +30,9 @@ const defaultState: IState = {
   goodsDataParams: {},
   listScroll: false,
   categorys: [],
+  children: [],
+  modal: { type: 'create', show: false, data: {} },
+
 };
 
 export default {
@@ -37,6 +50,13 @@ export default {
     },
     updateCategorys: (state: IState, { payload }) => {
       state.categorys = payload;
+    },
+    updateModal: (state, { payload }) => {
+      state.modal = payload;
+    },
+    updateChildren: (state, { payload }) => {
+      const { total, childrens  } = payload;
+      state.children = childrens;
     },
   },
   effects: {
@@ -71,6 +91,15 @@ export default {
         const _offset = _goods.length;
         yield put({ type: 'updateGoodsDataList', payload: { ...res, goods: _goods, offset: _offset } });
       }
+    },
+    *getChildren(_, { all, call, put }) {
+      const res = yield call(getChildren);
+      yield put({ type: 'updateChildren', payload: {childrens: res, total: res.length} });
+    },
+    *Addchild({params}, { all, call, put }) {
+      yield call(Addchild,{...params});
+      yield put({type:'updateModal', payload: { type: 'create', show: false, data: {} } });
+      yield put({ type: 'getChildren'});
     },
   },
 };

@@ -57,8 +57,8 @@ class App extends Component {
         // 'pages/ConsignmentShow/index',
         'pages/Main/index',
         'pages/GoodGoods/index',
-        'pages/PicketResult/index',
         'pages/PicketMallResult/index',
+        'pages/PicketResult/index',
 
         // 'pages/Index/index',
       'pages/TaskList/index',

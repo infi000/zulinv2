@@ -1,6 +1,6 @@
 import Taro, { scope, Component, useState, useDidShow, useEffect, showToast } from '@tarojs/taro';
 import { View, Block, ScrollView, Image, Picker } from '@tarojs/components';
-import { AtButton, AtImagePicker, AtInput, AtInputNumber, AtList, AtListItem, AtRadio } from 'taro-ui';
+import { AtActionSheet, AtActionSheetItem, AtButton, AtImagePicker, AtInput, AtInputNumber, AtList, AtListItem, AtRadio } from 'taro-ui';
 import Uploader from '@/components/Uploader';
 
 import { useSelector, useDispatch } from '@tarojs/redux';
@@ -17,25 +17,13 @@ const defaultForm: { [key: string]: any } = {};
 
 const ConsignmentCreate = () => {
   const dispatch = useDispatch();
-  const { categorys } = useSelector((state) => state.ConsignmentCreate);
 
-  const [form, setForm] = useState(defaultForm);
   const [bg, setBg] = useState('');
-  const [dCards , setDCards] = useState([]);
+  const [dCards, setDCards] = useState([]);
+  const [openModal, setOpenModal] = useState(false)
 
-  const handleUpdateForm = (opt: any) => {
-    console.log(opt);
-    setForm((params) => {
-      return { ...params, ...opt };
-    });
-  };
-  const handleSubmit = () => {
-    // console.log(form);
-    // return
-    if( !!!form.cardid){
-      showErrorToast("请选择购买的会员类型");
-      return 
-    }
+  const handleSubmit = (form: any) => {
+
     getUserBuycard(form).then(d => {
       const { arraydata } = d || {};
       const { nonceStr, timeStamp, signType, paySign } = arraydata || {};
@@ -74,9 +62,9 @@ const ConsignmentCreate = () => {
     return;
   };
 
-  const handleCardsChange = (e) => {
-    console.log(e);
-    handleUpdateForm({ cardid: e})
+
+  const handleOpen = () => {
+    setOpenModal(true)
   }
   useEffect(() => {
     getbg({ sname: 'yearbg' }).then((d) => {
@@ -96,19 +84,9 @@ const ConsignmentCreate = () => {
         <View style={{ height: '500px', lineHeight: '500px', textAlign: 'center' }}>
           <Image style='width: 100%;height: 100%;' src={bg || 'https://beyondplayapi.leclubthallium.com/Public/static/images/defaultdatecardbg.jpg'} />
         </View>
-        <View className='at-row  at-row__align--center' style={{ margin: '10px 0'}}>
-          <View className='at-col at-col-1 at-col--auto'>会员类型:</View>
-          <View className='at-col'>
-              <AtRadio
-        options={dCards.map((item: any) => ({ label: `${item.cardname}/${item.price}/(${USE_DAY_TYPE[item.usedaytype]})`, value: item.id }))}
-        value={form.cardid}
-        onClick={handleCardsChange}
-      />
-          </View>
-        </View>
         <View className='edit-btn-wrap'>
           <View className='btn-submit'>
-            <AtButton type='primary' size='small' onClick={handleSubmit}>
+            <AtButton type='primary' size='small'  onClick={handleOpen} className='n-color-btn'>
               购买会员
             </AtButton>
           </View>
@@ -117,6 +95,13 @@ const ConsignmentCreate = () => {
             取消
           </AtButton>
         </View>
+        <AtActionSheet isOpened={openModal} title='会员类型' onClose={ () => setOpenModal(false) }>
+          {dCards.map((item: any) => {
+            return <AtActionSheetItem onClick={() => handleSubmit({ cardid: item.id })}>
+              {`${item.cardname}/${item.price}/(${USE_DAY_TYPE[item.usedaytype]})`}
+            </AtActionSheetItem>
+          })}
+        </AtActionSheet>
       </View>
     </View>
   );

@@ -211,37 +211,37 @@ const LeaseOrder = () => {
     })
 
     const getQRCode = (code) => {
-        if (code == '') {
-            let oid = router.params.orderId;
-            leaseOrderWxcode({ oid: oid }).then((res) => {
-                console.log("收款二维码：", res)
-                setWxCode(res.codeurl);
+        // if (code == '') {
+        //     let oid = router.params.orderId;
+        //     leaseOrderWxcode({ oid: oid }).then((res) => {
+        //         console.log("收款二维码：", res)
+        //         setWxCode(res.codeurl);
 
-                const W = wx.getSystemInfoSync().windowWidth;
-                const rate = 750.0 / W;
-                const qrcode_w = 300 / rate;
+        //         const W = wx.getSystemInfoSync().windowWidth;
+        //         const rate = 750.0 / W;
+        //         const qrcode_w = 300 / rate;
 
-                const q = new QRCode('canvas', {
-                    // usingIn: this,
-                    text: res.codeurl,
-                    width: qrcode_w,
-                    height: qrcode_w,
-                    padding: 12,
-                    colorDark: "#000000",
-                    colorLight: "#ffffff",
-                    correctLevel: QRCode.CorrectLevel.H,
-                    callback: (res) => {
-                        // 生成二维码的临时文件
-                        console.log(res.path)
-                        // setQrcode(res.path)
-                        console.log(qrcode_w)
-                    }
-                });
-                console.log("q", q);
-            })
-        } else {
-            getQRCodeByCode(code);
-        }
+        //         const q = new QRCode('canvas', {
+        //             // usingIn: this,
+        //             text: res.codeurl,
+        //             width: qrcode_w,
+        //             height: qrcode_w,
+        //             padding: 12,
+        //             colorDark: "#000000",
+        //             colorLight: "#ffffff",
+        //             correctLevel: QRCode.CorrectLevel.H,
+        //             callback: (res) => {
+        //                 // 生成二维码的临时文件
+        //                 console.log(res.path)
+        //                 // setQrcode(res.path)
+        //                 console.log(qrcode_w)
+        //             }
+        //         });
+        //         console.log("q", q);
+        //     })
+        // } else {
+        //     getQRCodeByCode(code);
+        // }
     }
 
     const getQRCodeByCode = (code) => {

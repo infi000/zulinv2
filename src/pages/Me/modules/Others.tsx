@@ -1,22 +1,23 @@
 import Taro, { useEffect, useState } from '@tarojs/taro';
-import { View, Button } from '@tarojs/components';
+import { View, Button, Image } from '@tarojs/components';
 import { showSuccessToast } from '@/utils/util';
 import { subMsg, getAllTemplate } from '../services';
 import '../index.scss';
 import { isArray } from 'lodash';
 import { useSelector } from '@tarojs/redux';
 import { AtIcon } from 'taro-ui'
+import { shop, gerenzhongxin, dizhiguanli, goumaicishu, huiyuangoumai, yuyuedingdan, kefu } from '@/static/images';
 
 const LIST_URL_MAP = [
   // { name: '抽奖', url: '/pages/Choujiang/index' },
   // { name: '照片墙', url: '/pages/PhotoWall/index' },
   // { name: '个人中心', url: '/subPackagesMe/UserInfoManage/index', icon: { val: 'user', color: '#FF9800' } },
-  { name: '会员购买', url: '/subPackagesMe/BuyVip/index', icon: { val: 'money', color: '#FF9800' } },
-  { name: '购买次卡', url: '/subPackagesMe/BuyTabi/index', icon: { val: 'sketch', color: '#FF9800' } },
+  { name: '会员购买', url: '/subPackagesMe/BuyVip/index', icon: huiyuangoumai },
+  { name: '购买次卡', url: '/subPackagesMe/BuyTabi/index', icon: goumaicishu },
   // { name: '寄卖', url: '/subPackages/ConsignmentMenu/index', icon: { val: 'mail', color: '#F44336' } },
   // { name: '收藏', url: '/pages/Collect/index' },
   // { name: '我的藏品', url: '/pages/MyVip/index' },
-  { name: '地址管理', url: '/pages/Address/index', icon: { val: 'tag', color: '#2196F3' } },
+  { name: '地址管理', url: '/pages/Address/index', icon: dizhiguanli },
   // { name: '寄卖列表', url: '/subPackages/Consignment/index' },
   // { name: '寄卖售出列表', url: '/subPackages/ConsignmentSaleList/index' },
   // { name: '寄卖购买列表', url: '/subPackages/ConsignmentBuyList/index' },
@@ -80,11 +81,11 @@ const Others = () => {
       {/* verify: 1审核通过，2审核不通过 */}
       {
         //  `${userInfo.verify}` !== '1' &&
-         true &&
+        true &&
         <View className='at-row me-others-con' onClick={() => { handleClickItem('/subPackagesMe/UserInfoManage/index'); }}>
-          <View className='at-col-1 textL'><AtIcon value='user' size='18' color='#FF9800' /></View>
+          <View className='at-col-2 textL'> <Image className='me-icon' src={gerenzhongxin} /></View>
           <View className='at-col-5 textL'>个人中心</View>
-          <View className='at-col-6 textR'><AtIcon value='chevron-right' size='18' /></View>
+          <View className='at-col-5 textR'><AtIcon value='chevron-right' size='18' /></View>
         </View>
       }
       {LIST_URL_MAP.map((item) => {
@@ -97,10 +98,10 @@ const Others = () => {
               handleClickItem(url);
             }}
           >
-            <View className='at-col-1 textL'><AtIcon value={icon.val} size='18' color={icon.color} /></View>
+            <View className='at-col-2 textL'> <Image className='me-icon' src={icon} /></View>
             <View className='at-col-5 textL'>{name}</View>
             <View
-              className='at-col-6 textR'
+              className='at-col-5 textR'
             // onClick={() => {
             //   handleClickItem(url);
             // }}
@@ -115,23 +116,23 @@ const Others = () => {
       {/* // ut: 1不可验票，2可验票\ */}
       {
         userInfo.ut === '2' && <View className='at-row me-others-con' onClick={handleCarm}>
-          <View className='at-col-1 textL'><AtIcon value='repeat-play' size='18' color='#2196F3' /></View>
+          <View className='at-col-2 textL'> <Image className='me-icon' src={shop} /></View>
           <View className='at-col-5 textL'>扫码</View>
-          <View className='at-col-6 textR'><AtIcon value='chevron-right' size='18' /></View>
+          <View className='at-col-5 textR'><AtIcon value='chevron-right' size='18' /></View>
         </View>
       }
       <View className='at-row me-others-con' onClick={handleLeaseOrder}>
-        <View className='at-col-1 textL'><AtIcon value='bell' size='18' color='#2196F3' /></View>
+        <View className='at-col-2 textL'> <Image className='me-icon' src={yuyuedingdan} /></View>
         <View className='at-col-5 textL'>预约订单</View>
-        <View className='at-col-6 textR'><AtIcon value='chevron-right' size='18' /></View>
+        <View className='at-col-5 textR'><AtIcon value='chevron-right' size='18' /></View>
       </View>
       <View className='at-row me-others-con'>
         <Button open-type="contact" className='hideButton'>
           客服
         </Button>
-        <View className='at-col-1 textL'><AtIcon value='message' size='18' color='#2196F3' /></View>
+        <View className='at-col-2 textL'> <Image className='me-icon' src={kefu} /></View>
         <View className='at-col-5 textL'>客服</View>
-        <View className='at-col-6 textR'><AtIcon value='chevron-right' size='18' /></View>
+        <View className='at-col-5 textR'><AtIcon value='chevron-right' size='18' /></View>
       </View>
       {/* <View className='at-row me-others-con' onClick={handleTaskList}>
         <View className='at-col-1 textL'><AtIcon value='numbered-list' size='18' color='#2196F3' /></View>

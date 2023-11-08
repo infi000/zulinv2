@@ -5,6 +5,8 @@
 
 @import "~taro-ui/dist/style/components/input.scss";
 $border-style: 2px solid #dbdada;
+
+$n-color: #8BC34A;
 @mixin base-con {
   background-color: #fff;
   margin-bottom: 10px;
@@ -73,10 +75,15 @@ $border-style: 10px solid $bg-grey-color;
 }
 
 .goodgoods-wrap {
-  background-color: $bg-grey-color;
+  background-color: #fff;
   // height: calc(100vh + 680px);
   height:100vh;
   overflow-y: scroll;
+  .n-color-btn{
+    background-color: $n-color;
+    border-color: $n-color;
+  
+  }
 
 }
 .listgoods-wrap {

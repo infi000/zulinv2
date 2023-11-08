@@ -22,14 +22,14 @@ const BuyPage = () => {
     getMyAddress({}).then(d => {
       const { addresses } = d;
       if (!addresses) {
-        showToast("没有设置收货地址");
+        // showToast("没有设置收货地址");
         // 1. 设置地址信息
         setDefaultAddt(false);
         return
       }
       const defalutAddress = addresses.find(item => item.status == 1);
       if (!defalutAddress) {
-        showToast("没有默认收货地址");
+        // showToast("没有默认收货地址");
         // 1. 去地址信息中配置
         setDefaultAddt(false);
         return
@@ -41,10 +41,10 @@ const BuyPage = () => {
     })
   });
   const handlePay = () => {
-    if (!defaultAddr) {
-      showToast("没有设置收货地址");
-      return;
-    }
+    // if (!defaultAddr) {
+    //   showToast("没有设置收货地址");
+    //   return;
+    // }
     const { params } = router;
     const { orderid } = params;
     if (!orderid) {

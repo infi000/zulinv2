@@ -1,3 +1,11 @@
+/*
+ * @Author: 张驰阳 zhangchiyang@sfmail.sf-express.com
+ * @Date: 2023-07-29 23:08:59
+ * @LastEditors: 张驰阳 zhangchiyang@sfmail.sf-express.com
+ * @LastEditTime: 2023-11-05 23:33:31
+ * @FilePath: /zulinv2/src/static/images/index.js
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 
 
 
@@ -48,6 +56,7 @@ export { default as shequ} from './shequ.png';
 export { default as wode} from './wode.png';
 export { default as yuyue} from './yuyue.png';
 export { default as haowu} from './haowu.png';
+export { default as touxiang} from './touxiang.png';
 
 
 
@@ -69,13 +78,18 @@ export {default as liwu_s} from './liwu_s.png';
 
 export {default as wode_s} from './wode_s.png';
 export {default as csend} from './csend.png';
+export {default as gerenzhongxin} from './gerenzhongxin.png';
+export {default as dizhiguanli} from './dizhiguanli.png';
+export {default as goumaicishu} from './goumaicishu.png';
+export {default as huiyuangoumai} from './huiyuangoumai.png';
+export {default as yuyuedingdan} from './yuyuedingdan.png';
+export {default as kefu} from './kefu.png';
 
 // tabbar
-export {default as shop} from './shop.png';
-export {default as shop_s} from './shop_s.png';
+export {default as shop} from './shouye.png';
 export {default as community} from './community.png';
 export {default as community_s} from './community_s.png';
-export {default as yue} from './yue.png';
-export {default as yue_s} from './yue_s.png';
-export {default as me} from './me.png';
-export {default as me_s} from './me_s.png';
+export {default as yue} from './yuyue.png';
+export {default as me} from './wode.png';
+// export {default as kabg} from './ka-bg.png';
+export {default as kabg} from './ka-bg.jpg';
