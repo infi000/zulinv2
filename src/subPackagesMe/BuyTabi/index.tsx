@@ -92,7 +92,7 @@ const ConsignmentCreate = () => {
   return (
     <View className='goodgoods-wrap'>
       <View className='myvip-wrap'>
-        <Image mode='aspectFill' style='width: 100%;height: 500px;' src={bg || 'https://beyondplayapi.leclubthallium.com/Public/static/images/defaultcicardbg.jpg'} />
+        <Image mode='aspectFill' style='width: 100%;height: 500px;' src={bg || 'https://beyondplayapi.leclubthallium.com/Public/static/images/defaultcicardbg.png'} />
         <View className='edit-btn-wrap'>
           <View className='btn-submit'>
             <AtButton type='primary' size='small' onClick={handleOpen} className='n-color-btn'>

@@ -6,18 +6,19 @@ import '../index.scss';
 import { isArray } from 'lodash';
 import { useSelector } from '@tarojs/redux';
 import { AtIcon } from 'taro-ui'
-import { shop, gerenzhongxin, dizhiguanli, goumaicishu, huiyuangoumai, yuyuedingdan, kefu } from '@/static/images';
+import { shop, gerenzhongxin, dizhiguanli, goumaicishu, huiyuangoumai, yuyuedingdan, kefu, jinchangjilu8 } from '@/static/images';
 
 const LIST_URL_MAP = [
   // { name: '抽奖', url: '/pages/Choujiang/index' },
   // { name: '照片墙', url: '/pages/PhotoWall/index' },
   // { name: '个人中心', url: '/subPackagesMe/UserInfoManage/index', icon: { val: 'user', color: '#FF9800' } },
-  { name: '会员购买', url: '/subPackagesMe/BuyVip/index', icon: huiyuangoumai },
+  // { name: '会员购买', url: '/subPackagesMe/BuyVip/index', icon: huiyuangoumai },
   { name: '购买次卡', url: '/subPackagesMe/BuyTabi/index', icon: goumaicishu },
   // { name: '寄卖', url: '/subPackages/ConsignmentMenu/index', icon: { val: 'mail', color: '#F44336' } },
   // { name: '收藏', url: '/pages/Collect/index' },
   // { name: '我的藏品', url: '/pages/MyVip/index' },
-  { name: '地址管理', url: '/pages/Address/index', icon: dizhiguanli },
+  // { name: '地址管理', url: '/pages/Address/index', icon: dizhiguanli },
+  { name: '进场记录', url: '/pages/CheckedList/index', icon: jinchangjilu8 },
   // { name: '寄卖列表', url: '/subPackages/Consignment/index' },
   // { name: '寄卖售出列表', url: '/subPackages/ConsignmentSaleList/index' },
   // { name: '寄卖购买列表', url: '/subPackages/ConsignmentBuyList/index' },
@@ -121,11 +122,11 @@ const Others = () => {
           <View className='at-col-5 textR'><AtIcon value='chevron-right' size='18' /></View>
         </View>
       }
-      <View className='at-row me-others-con' onClick={handleLeaseOrder}>
+      {/* <View className='at-row me-others-con' onClick={handleLeaseOrder}>
         <View className='at-col-2 textL'> <Image className='me-icon' src={yuyuedingdan} /></View>
         <View className='at-col-5 textL'>预约订单</View>
         <View className='at-col-5 textR'><AtIcon value='chevron-right' size='18' /></View>
-      </View>
+      </View> */}
       <View className='at-row me-others-con'>
         <Button open-type="contact" className='hideButton'>
           客服

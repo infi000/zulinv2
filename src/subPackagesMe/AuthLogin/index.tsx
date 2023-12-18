@@ -2,7 +2,7 @@
  * @Author: 张驰阳 zhangchiyang@sfmail.sf-express.com
  * @Date: 2023-07-29 23:08:59
  * @LastEditors: 张驰阳 zhangchiyang@sfmail.sf-express.com
- * @LastEditTime: 2023-08-11 00:16:41
+ * @LastEditTime: 2023-12-18 23:15:36
  * @FilePath: /zulin/src/subPackagesMe/AuthLogin/index.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -65,6 +65,7 @@ const AuthLogin = () => {
                 Taro.navigateBack({
                   delta: 1//表示回到上一页面
                 })
+                dispatch({type: 'tabbar/updateCurrentNavIndex', payload: 0})
               }
               });
         } else {

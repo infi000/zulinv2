@@ -1,14 +1,25 @@
+/*
+ * @Author: 张驰阳 zhangchiyang@sfmail.sf-express.com
+ * @Date: 2023-11-09 00:07:46
+ * @LastEditors: 张驰阳 zhangchiyang@sfmail.sf-express.com
+ * @LastEditTime: 2023-12-11 23:39:49
+ * @FilePath: /zulinv2/src/config/api.js
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 const MOCK = 'http://easy-mock.sftcwl.com/mock/5f6a20a67266ef5678785185/wxschool';
 const MOCK2 = 'http://easy-mock.sftcwl.com/mock/5f1a8bf410c3f359faddc7df/test';
 const yjw_test = 'https://dev.tangguostore.com/index.php/MiniApi';
 // const yjw = 'https://dev.tangguostore.com';
 const yjw = 'https://beyondplayapi.leclubthallium.com';
 const community = 'https://heshenghui.zhiheworld.com';
+
 const WxApiRoot = yjw + '/index.php/MiniApi'; 
 const assetRoot = yjw + '/Public/MiniApi/images'
 // https://www.tangguostore.com/index.php/MiniApi/CC/myowns?openid=oKDX35X2NHYdiZdb8ukgFZmqwM8M
 // https://dev.tangguostore.com/Public/MiniApi/images/jimai.jpg
 // https://dev.tangguostore.com/Public/MiniApi/images/paimai.jpg
+export const HOST = yjw;
+
 export default {
   picJimai: assetRoot + '/jimai.jpg', // 图片
   picPaimai: assetRoot + '/paimai.jpg', // 图片
@@ -146,10 +157,14 @@ export default {
   baseinfo2: WxApiRoot + '/User/baseinfo2',
   getCarddCards: WxApiRoot + '/Card/dcards',
   getUserBuycard: WxApiRoot + '/User/buycard',
-  getccCard: WxApiRoot + '/Card/ccards',
+  // getccCard: WxApiRoot + '/Card/ccards',
+  getccCard: WxApiRoot + '/Card/cards',
   getMyCard: WxApiRoot + '/User/mycard',
   detailbyccode: WxApiRoot + '/Card/detailbyccode',
   Cardcheck: WxApiRoot + '/Card/check',
   Addchild: WxApiRoot + '/User/addchild',
   getChildrens: WxApiRoot + '/User/childrens',
+  getCardCheckedList: WxApiRoot + '/Card/checkedlist',
+  getPicketCheckedList: WxApiRoot + '/Picket/checkedlist',
+  getCardDetail: WxApiRoot + '/Card/detail',
 };

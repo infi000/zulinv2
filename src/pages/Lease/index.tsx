@@ -34,7 +34,7 @@ const Lease = () => {
     const [experimentsDetail, setExperimentsDetail] = useState<any>({}); // 标题
     const [rooms, setRooms] = useState<any>([]); // 房间信息
     const [tools, setTools] = useState<any>([]); // 工具信息
-    const [timer, setTimer] = useState(1); // 预约市场，单位：小时
+    const [timer, setTimer] = useState(4); // 预约市场，单位：小时
     const [selectorDateStatus, setSelectorDateStatus] = useState(true); // 是否可以选日期
     const [maxAtInputNumber, setMaxAtInputNumber] = useState(15); // 可选择最大时长
     const [curDate, setCurDate] = useState(''); // 今日日期
@@ -405,6 +405,10 @@ const Lease = () => {
         })
     }
 
+    useEffect(() => {
+        setTimer(experimentsDetail.minhour);
+    }, [experimentsDetail])
+    
     return (
         <View className='lease-warp'>
             <View className='at-article lease-title'>
@@ -509,12 +513,12 @@ const Lease = () => {
                         <AtInputNumber
                             type="number"
                             disabledInput
-                            min={1}
+                            min={experimentsDetail.minhour}
                             max={maxAtInputNumber}
                             step={1}
                             value={timer}
                             onChange={timerChange}
-                            disabled
+                            // disabled
                         />
                         <View>（小时）</View>
                     </View>
@@ -583,11 +587,11 @@ const Lease = () => {
                         <AtInputNumber
                             type="number"
                             disabledInput
-                            min={1}
+                            min={experimentsDetail.minhour}
                             max={maxAtInputNumber}
                             step={1}
                             value={timer}
-                            disabled
+                            // disabled
                             onChange={timerChange}
                         />
                         <View>（小时）</View>

@@ -2,7 +2,7 @@
  * @Author: 张驰阳 zhangchiyang@sfmail.sf-express.com
  * @Date: 2023-09-20 23:48:08
  * @LastEditors: 张驰阳 zhangchiyang@sfmail.sf-express.com
- * @LastEditTime: 2023-09-20 23:50:20
+ * @LastEditTime: 2023-11-17 00:17:05
  * @FilePath: /zulinv2/src/pages/PicketMallResult/index.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -18,7 +18,7 @@ import { AtButton, AtInputNumber } from 'taro-ui';
 const PicketMallResult = () => {
   const [picketInfo, SetPicketInfo] = useState({});
   const router = useRouter();
-  const [form, setForm] = useState({ duration: 3 });
+  const [form, setForm] = useState({ duration: 2 });
   const handleUpdateForm = (opt: any) => {
     console.log(opt);
     setForm((params) => {
@@ -33,6 +33,12 @@ const PicketMallResult = () => {
       const res = await setpicketduration({ 
         pid: get(picketInfo, ['p', 'id'], ''), ...form });
         showErrorToast('设置成功')
+        setTimeout(() => {
+          Taro.navigateBack({
+            delta: 1//表示回到上一页面
+        })
+        }, 500);
+    
     } catch (error) {
       showErrorToast(error.toString())
     }
@@ -53,7 +59,7 @@ const PicketMallResult = () => {
       <View className='line2'>验票结果:{get(picketInfo, ['msg'], '-')}</View>
 
       <View className='line1'>活动id:{get(picketInfo, ['p', 'id'], '-')}</View>
-      <View className='line1'>活动:{get(picketInfo, ['p', 'title'], '-')}</View>
+      <View className='line1'>活动:{get(picketInfo, ['p', 'cardname'], '-')}</View>
       <View className='line1'>开场时间:{get(picketInfo, ['p', 'stime'], '-')}</View>
       <View className='line1'>结束时间:{get(picketInfo, ['p', 'etime'], '-')}</View>
       <View className='line3'>
@@ -66,7 +72,7 @@ const PicketMallResult = () => {
         设置检票时长
         <AtInputNumber
           className='qrres-set-input'
-          min={3}
+          min={1}
           max={12}
           step={1}
           value={form.duration}

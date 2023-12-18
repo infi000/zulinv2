@@ -2,7 +2,7 @@
  * @Author: 张驰阳 zhangchiyang@sfmail.sf-express.com
  * @Date: 2023-08-10 23:47:55
  * @LastEditors: 张驰阳 zhangchiyang@sfmail.sf-express.com
- * @LastEditTime: 2023-11-05 23:31:43
+ * @LastEditTime: 2023-12-11 23:47:42
  * @FilePath: /zulin/src/pages/Me/modules/MyAvatar.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -26,6 +26,16 @@ const myType = {
 const MyAvatar = () => {
   const { isLogIn, wxUserInfo, userInfo } = useSelector((state) => state.main);
   const dispatch = useDispatch();
+  const handleRefreash = () => {
+  
+    Taro.showLoading({
+      title: '刷新中',
+    })
+    dispatch({ type: 'main/getUserInfo', payload: {} });
+    setTimeout(() => {
+      Taro.hideLoading()
+    }, 1000)
+  }
   const getPhoneNumber = (e) => {
     wx.getUserInfo({
       desc: '用于完善会员资料',
@@ -135,11 +145,17 @@ const MyAvatar = () => {
               <SwiperItem key={index}>
                 <View className='mycard-con'>
                   <Image src={kabg} mode='aspectFit' className='swiper-img-bg' />
-                  <View className='swiper-desc'>卡类型： {CARD_TYPE[item.cardtype]}</View>
-                  <View className='swiper-img-con'><Image src={item.codeurl || 'https://beyondplayapi.leclubthallium.com/Public/static/images/defaultucardbg.jpg'} className='swiper-img' /></View>
-                  <View className='swiper-desc-name'>{item.cardname || ''}</View>
+                  <View className='at-row  at-row__align--center swiper-desc'>
+                    
+                  <View className='at-col at-col-1 at-col--auto'> {CARD_TYPE[item.cardtype]} { item.cardname ? `(${item.cardname})` : ''}
+                  </View>
+                    <View className='at-col'></View>
+                    <View className='at-col'> 手机号：{item.phone ||'-'} </View>
+                  </View>
+                  <View className='swiper-img-con'><Image src={item.codeurl} className='swiper-img' onClick={handleRefreash} /></View>
+                  {/* <View className='swiper-desc-name'>{item.cardname || ''}</View> */}
                   <View className='at-row  at-row__align--center swiper-desc2'>
-                    <View className='at-col at-col-1 at-col--auto'>有效期：{formatDate(item.cardexpired)}</View>
+                    <View className='at-col at-col-1 at-col--auto'>{item.cardexpired == '-1' ? '': `有效期：${formatDate(item.cardexpired)}`}</View>
                     <View className='at-col'></View>
                     <View className='at-col'>{
                       item.cardtype == 4 && <View>次数：{item.leftcount}/{item.totalcount}</View>

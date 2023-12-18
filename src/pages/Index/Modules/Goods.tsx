@@ -7,6 +7,8 @@ import { dumpByType } from '../services';
 const Goods = (props) => {
     const img = "https://heshenghui.zhiheworld.com/images_tmp/goods.png";
     const dump = (e) => {
+        console.log('Goods', e);
+
         let gotype = e.currentTarget.dataset.gotype;
         let title = e.currentTarget.dataset.title;
         let eid = e.currentTarget.dataset.eid;

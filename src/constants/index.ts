@@ -13,6 +13,9 @@ export const ROUTER_NAME_MAP = {
     community:'Community',
     reserve:'Reserve',
     index:'Index',
+    paidui:'Paidui',
+    goupiao:'Goupiao',
+    order:'Order',
 };
 
 export const ORDER_OTYPE_MAP = new Map([

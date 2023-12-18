@@ -51,17 +51,16 @@ class App extends Component {
 
   config = {
     pages: [
-        //  'pages/ZcyTest/index',
 
-        // 'pages/Consignment/index',
-        // 'pages/ConsignmentShow/index',
         'pages/Main/index',
+        'pages/GoupiaoDetail/index',
         'pages/GoodGoods/index',
         'pages/PicketMallResult/index',
         'pages/PicketResult/index',
+        'pages/CheckedList/index',
 
         // 'pages/Index/index',
-      'pages/TaskList/index',
+      // 'pages/TaskList/index',
       'pages/LeaseOrderList/index',
       
       'pages/LeaseList/index',
@@ -83,9 +82,9 @@ class App extends Component {
       // 'pages/MyVip/index',
       'pages/Address/index',
       'pages/GoodsShow/index',
-      'pages/Order/index',
+      // 'pages/Order/index',
       'pages/SearchRes/index',
-      'pages/Collect/index',
+      // 'pages/Collect/index',
       'pages/SortPage/index',
       'pages/LeaseOrder/Modules/Protocol/index',
       
@@ -107,6 +106,7 @@ class App extends Component {
           'ConsignmentSaleList/index',
           'ConsignmentCreate/index',
           'ConsignmentMenu/index',
+          // 'Paidui/index',
         ],
       },
       {

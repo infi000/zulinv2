@@ -12,11 +12,12 @@
 
 .me-wrap {
   background-color: $bg-grey-color;
-  padding-bottom: 200px;
+  padding-bottom: 300px;
+  border-top: 1px solid $bg-grey-color;
 }
 .my-avatar-con {
-  background-color: #292929;
-  color: #fff;
+  background-color: #fff;
+  color: #292929;
   // height: 300px;
   padding: 40px;
   .Swiper-con{
@@ -26,15 +27,15 @@
     margin: 0 auto 20px;
     .swiper-img-con{
       height: 350px;
-      width: 100%;
-    padding-left: 20px;
-    padding-top: 10px;
-
+      width: 91%;
+    padding-left: 32px;
+    padding-top: 22px;
+    text-align: right;
     }
     .swiper-img{
-      height: 310px;
-      width: 310px;
       border-radius: 25px;
+      height: 338px;
+      width: 338px;
     }
     .swiper-desc2{
       font-size: 24px;
@@ -42,7 +43,16 @@
       bottom: 5px;
       left: 20px;
       font-weight: bold;
-      color: #D4AF37;
+      color: #fc77d8;
+    }
+    .swiper-desc3{
+      font-size: 24px;
+      position: absolute;
+      bottom: -20px;
+      left: 20px;
+      font-weight: bold;
+      color: #fc77d8;
+      z-index: 1000;
     }
     .swiper-desc-name{
       position: absolute;
@@ -50,7 +60,7 @@
       bottom: 60px;
       font-size: 30px;
       font-weight: bold;
-      color: #D4AF37;
+      color: #fc77d8;
     }
     .swiper-desc{
       font-size: 24px;
@@ -58,7 +68,7 @@
     height: 50px;
     line-height: 50px;
     padding-left: 20px;
-    color: #D4AF37;
+    color: #fc77d8;
     }
   }
   .mycard-con{
