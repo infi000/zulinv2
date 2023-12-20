@@ -2,11 +2,11 @@
  * @Author: 张驰阳 zhangchiyang@sfmail.sf-express.com
  * @Date: 2023-08-10 23:47:55
  * @LastEditors: 张驰阳 zhangchiyang@sfmail.sf-express.com
- * @LastEditTime: 2023-12-11 23:47:42
+ * @LastEditTime: 2023-12-19 23:43:04
  * @FilePath: /zulin/src/pages/Me/modules/MyAvatar.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
-import Taro from '@tarojs/taro';
+import Taro, { useState } from '@tarojs/taro';
 import { View, Button, Block, Swiper, SwiperItem, Image } from '@tarojs/components';
 import { AtAvatar, AtModal, AtModalAction, AtModalContent, AtModalHeader } from 'taro-ui';
 import { useSelector, useDispatch } from '@tarojs/redux';
@@ -26,14 +26,17 @@ const myType = {
 const MyAvatar = () => {
   const { isLogIn, wxUserInfo, userInfo } = useSelector((state) => state.main);
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false)
   const handleRefreash = () => {
   
     Taro.showLoading({
       title: '刷新中',
     })
+    setLoading(true)
     dispatch({ type: 'main/getUserInfo', payload: {} });
     setTimeout(() => {
       Taro.hideLoading()
+      setLoading(false)
     }, 1000)
   }
   const getPhoneNumber = (e) => {
@@ -141,7 +144,7 @@ const MyAvatar = () => {
             autoplay={false}
             style={{ height: '100%' }}
           >
-            {(Array.isArray(userInfo.cards) ? userInfo.cards : []).map((item, index) => (
+            {(Array.isArray(userInfo.cards) && !loading ? userInfo.cards : []).map((item, index) => (
               <SwiperItem key={index}>
                 <View className='mycard-con'>
                   <Image src={kabg} mode='aspectFit' className='swiper-img-bg' />
@@ -152,7 +155,7 @@ const MyAvatar = () => {
                     <View className='at-col'></View>
                     <View className='at-col'> 手机号：{item.phone ||'-'} </View>
                   </View>
-                  <View className='swiper-img-con'><Image src={item.codeurl} className='swiper-img' onClick={handleRefreash} /></View>
+                  <View className='swiper-img-con'><Image src={item.codeurl + '?timestamp='+new Date().toISOString()} className='swiper-img' onClick={handleRefreash} /></View>
                   {/* <View className='swiper-desc-name'>{item.cardname || ''}</View> */}
                   <View className='at-row  at-row__align--center swiper-desc2'>
                     <View className='at-col at-col-1 at-col--auto'>{item.cardexpired == '-1' ? '': `有效期：${formatDate(item.cardexpired)}`}</View>
