@@ -70,9 +70,9 @@ class App extends Component {
 
       'pages/LeaseOrder/index',
       'pages/PicketQr/index',
-      'pages/CommunityDetail/index',
-      'pages/Community/Add/index',
-      'pages/Community/AddVideo/index',
+      // 'pages/CommunityDetail/index',
+      // 'pages/Community/Add/index',
+      // 'pages/Community/AddVideo/index',
       // 'pages/Choujiang/index',
       'pages/SetAddrId/index',
       // 'pages/PicketQr/index',

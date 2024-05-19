@@ -167,4 +167,5 @@ export default {
   getCardCheckedList: WxApiRoot + '/Card/checkedlist',
   getPicketCheckedList: WxApiRoot + '/Picket/checkedlist',
   getCardDetail: WxApiRoot + '/Card/detail',
+  getDiscountcardList: WxApiRoot + '/User/getDiscountcardList',
 };

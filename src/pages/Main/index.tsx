@@ -2,7 +2,7 @@
  * @Author: 张驰阳 zhangchiyang@sfmail.sf-express.com
  * @Date: 2023-07-29 23:08:59
  * @LastEditors: 张驰阳 zhangchiyang@sfmail.sf-express.com
- * @LastEditTime: 2023-12-03 22:43:14
+ * @LastEditTime: 2023-12-22 09:49:19
  * @FilePath: /zulin/src/pages/Main/index.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -14,7 +14,7 @@ import Tabbar from '@/components/Tabbar';
 import Me from '@/pages/Me';
 import Paidui from '@/pages/Paidui';
 import Goupiao from '@/pages/Goupiao';
-import ShequList from '@/pages/Community';
+// import ShequList from '@/pages/Community';
 import Reserve from '@/pages/Reserve';
 import ShowYe from '@/pages/Index';
 import Order from '@/pages/Order';
@@ -39,7 +39,7 @@ console.log('nav[currentNavIndex].type', nav[currentNavIndex].type);
       {nav[currentNavIndex].type == ROUTER_NAME_MAP.me && <Me />}
       {/* {nav[currentNavIndex].type == ROUTER_NAME_MAP.goodGoods && <GoodGoods />} */}
       {nav[currentNavIndex].type == ROUTER_NAME_MAP.index && <ShowYe />}
-      {nav[currentNavIndex].type == ROUTER_NAME_MAP.community && <ShequList />}
+      {/* {nav[currentNavIndex].type == ROUTER_NAME_MAP.community && <ShequList />} */}
       {nav[currentNavIndex].type == ROUTER_NAME_MAP.paidui && <Paidui />}
       {nav[currentNavIndex].type == ROUTER_NAME_MAP.reserve && <Reserve />}
       {nav[currentNavIndex].type == ROUTER_NAME_MAP.goupiao && <Goupiao />}

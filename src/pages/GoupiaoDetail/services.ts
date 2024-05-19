@@ -8,8 +8,10 @@
  */
 import request from '@/utils/request';
 import Api from '@/config/api';
-
+const Mock = 'http://easy-mock.sftcwl.com/mock/604dd81600281386ece501d0/di'
 export const getUserBuycard = (payload: any) => request.get(Api.getUserBuycard, payload);
 export const getCardDetail = (payload: any) => request.get(Api.getCardDetail, payload);
+// export const getDiscountcardList = (payload: any) => request.get(Mock + '/User/getDiscountcardList', payload);
+export const getDiscountcardList = (payload: any) => request.get(Api.getDiscountcardList, payload);
 
 export default {};
