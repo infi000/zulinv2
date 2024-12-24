@@ -19,7 +19,7 @@ const List = () => {
     try {
       Taro.navigateTo({ url: '/subPackages/ConsignmentShow/index?orderid='+orderid+'&gid=' + id + '&title=' + title });
     } catch (error) {
-      Taro.navigateTo({ url: '/subPackages/ConsignmentShow/index?orderid='+orderid+'&gid=' + id + '&title=比莱童园' });
+      Taro.navigateTo({ url: '/subPackages/ConsignmentShow/index?orderid='+orderid+'&gid=' + id + '&title=小火车' });
     }
   };
   return (
@@ -41,7 +41,7 @@ const List = () => {
                   </View>
                   <View className='at-row at-row__justify--between goods-con-top'>
                     <View className='at-col at-col-3 goods-price'>¥{price}</View>
-                    { ispay === '0' ? 
+                    { ispay === '0' ?
                      <View className='at-col at-col-3 goods-saler'>去付款</View>
                      : <View className='at-col at-col-3 goods-saler'>已付款</View>
                   }

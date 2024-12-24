@@ -24,7 +24,7 @@ const List = () => {
     try {
       Taro.navigateTo({ url: '/subPackages/ConsignmentShow/index?isSelf=1&gid=' + id + '&title=' + title });
     } catch (error) {
-      Taro.navigateTo({ url: '/subPackages/ConsignmentShow/index?isSelf=1&gid=' + id + '&title=比莱童园' });
+      Taro.navigateTo({ url: '/subPackages/ConsignmentShow/index?isSelf=1&gid=' + id + '&title=小火车' });
     }
   };
   return (
@@ -34,7 +34,7 @@ const List = () => {
           {formatList &&
             formatList.map((item, index) => {
               const { id, title, sale, thumbinal, price, issale, ispay, gstatus } = item;
-             
+
               return (
                 <View className='at-col at-col-6 goods-con' key={id + index}>
                   <View className='goods-con-mid' onClick={() => handleChooseGoods({ id: id, issale: issale, title })}>

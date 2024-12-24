@@ -24,7 +24,7 @@ const ConsignmentCreate = () => {
   // price:商品价格
   // chargefee:手续费
   // uphone:联系手机号
-  // gcid:商品分类id 
+  // gcid:商品分类id
   // pics[]:寄卖商品详情图，文件域
 
   const handleOpen = () => {
@@ -92,7 +92,7 @@ const ConsignmentCreate = () => {
   return (
     <View className='goodgoods-wrap'>
       <View className='myvip-wrap'>
-        <Image mode='aspectFill' style='width: 100%;height: 500px;' src={bg || 'https://beyondplayapi.leclubthallium.com/Public/static/images/defaultcicardbg.png'} />
+        <Image mode='aspectFill' style='width: 100%;height: 500px;' src={bg || 'https://xtblapi.leclubthallium.com/Public/static/images/defaultcicardbg.png'} />
         <View className='edit-btn-wrap'>
           <View className='btn-submit'>
             <AtButton type='primary' size='small' onClick={handleOpen} className='n-color-btn'>

@@ -28,7 +28,7 @@ const MyAvatar = () => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false)
   const handleRefreash = () => {
-  
+
     Taro.showLoading({
       title: '刷新中',
     })
@@ -134,7 +134,7 @@ const MyAvatar = () => {
       </View>
       {
         <View className='Swiper-con' style={{ display: !Array.isArray(userInfo.cards) || userInfo.cards.length === 0 ? 'none' : '' }}>
-        
+
           <Swiper
             onChange={handleSwitch}
             indicatorColor='#999'
@@ -149,7 +149,7 @@ const MyAvatar = () => {
                 <View className='mycard-con'>
                   <Image src={kabg} mode='aspectFit' className='swiper-img-bg' />
                   <View className='at-row  at-row__align--center swiper-desc'>
-                    
+
                   <View className='at-col at-col-1 at-col--auto'> {CARD_TYPE[item.cardtype]} { item.cardname ? `(${item.cardname})` : ''}
                   </View>
                     <View className='at-col'></View>
@@ -175,15 +175,15 @@ const MyAvatar = () => {
         isLogIn &&   <AtModal isOpened={userInfo.isbindphone == 0}>
         <AtModalHeader>获取您的手机号</AtModalHeader>
         <AtModalContent>
-          <View style={{ textAlign: 'center'}}>比莱童园申请获取并验证您的手机号</View>
+          <View style={{ textAlign: 'center'}}>小火车申请获取并验证您的手机号</View>
         </AtModalContent>
         <AtModalAction>
-           <Button>取消</Button> 
+           <Button>取消</Button>
            <Button open-type="getPhoneNumber" onGetPhoneNumber={getPhoneNumber} >确定</Button>
          </AtModalAction>
       </AtModal>
       }
-    
+
     </View>
   );
 };

@@ -23,7 +23,7 @@ const List = () => {
     try {
       Taro.navigateTo({ url: '/subPackages/ConsignmentShow/index?gid=' + id + '&title=' + title });
     } catch (error) {
-      Taro.navigateTo({ url: '/subPackages/ConsignmentShow/index?gid=' + id + '&title=比莱童园' });
+      Taro.navigateTo({ url: '/subPackages/ConsignmentShow/index?gid=' + id + '&title=小火车' });
     }
   };
 
@@ -54,7 +54,7 @@ const List = () => {
                     {title}
                   </View>
                 </View>
-              ) 
+              )
             })}
         </View>
         {formatList && formatList.length === 0 && <AtDivider fontColor='#c0c0c0' lineColor='#c0c0c0' fontSize='26' content='暂无更多' />}

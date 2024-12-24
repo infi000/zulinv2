@@ -1,8 +1,8 @@
 {
   "miniprogramRoot": "dist/",
-  "projectname": "比莱童园",
+  "projectname": "小火车",
   "description": "test",
-  "appid": "wxf9c09b0382082cd6",
+  "appid": "wx5772af7a9975231e",
   "setting": {
     "urlCheck": false,
     "es6": false,

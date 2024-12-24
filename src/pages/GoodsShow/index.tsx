@@ -25,7 +25,7 @@ const GoodsShow = () => {
     dispatch({ type: 'goodsShow/getRelatedGoods' });
     dispatch({ type: 'goodsShow/getIsfav' });
     Taro.setNavigationBarTitle({
-      title:title||'比莱童园'
+      title:title||'小火车'
     });
     (Taro as any).showShareMenu({
       withShareTicket: true,
@@ -41,7 +41,7 @@ const GoodsShow = () => {
     // }
     return {
       showShareItems: ['wechatFriends', 'wechatMoment'],
-      title: title || '比莱童园',
+      title: title || '小火车',
       path: '/pages/GoodsShow/index?gid=' + gid + '&title=' + title ,
       // imageUrl
     }

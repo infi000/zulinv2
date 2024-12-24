@@ -29,7 +29,7 @@ const ConsignmentShow = () => {
     // dispatch({ type: 'ConsignmentShow/getRelatedGoods' });
     // dispatch({ type: 'ConsignmentShow/getIsfav' });
     Taro.setNavigationBarTitle({
-      title:title||'比莱童园'
+      title:title||'小火车'
     });
     (Taro as any).showShareMenu({
       withShareTicket: true,
@@ -45,7 +45,7 @@ const ConsignmentShow = () => {
     // }
     return {
       showShareItems: ['wechatFriends', 'wechatMoment'],
-      title: title || '比莱童园',
+      title: title || '小火车',
       path: '/subPackages/ConsignmentShow/index?gid=' + gid + '&title=' + title ,
       // imageUrl
     }

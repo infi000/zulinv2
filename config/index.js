@@ -1,5 +1,5 @@
 const config = {
-  projectName: '比莱童园',
+  projectName: '小火车',
   date: '2020-6-21',
   designWidth: 750,
   deviceRatio: {

@@ -82,7 +82,7 @@ const ConsignmentCreate = () => {
     <View className='goodgoods-wrap'>
       <View className='myvip-wrap'>
         <View style={{ height: '500px', lineHeight: '500px', textAlign: 'center' }}>
-          <Image style='width: 100%;height: 100%;' src={bg || 'https://beyondplayapi.leclubthallium.com/Public/static/images/defaultdatecardbg.jpg'} />
+          <Image style='width: 100%;height: 100%;' src={bg || 'https://xtblapi.leclubthallium.com/Public/static/images/defaultdatecardbg.jpg'} />
         </View>
         <View className='edit-btn-wrap'>
           <View className='btn-submit'>

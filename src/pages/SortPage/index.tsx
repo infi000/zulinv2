@@ -21,7 +21,7 @@ const SortPage = () => {
       setFormatList(goods || []);
     });
     Taro.setNavigationBarTitle({
-      title: title || '比莱童园',
+      title: title || '小火车',
     });
   });
   const onScrollToLower = (e) => {
@@ -30,7 +30,7 @@ const SortPage = () => {
   };
   return (
     <View className='list-wrap' ><SearchBar cid={cid} />
-      <ScrollView scrollY={true} scrollWithAnimation style={{ height: '100%' }} onScrollToLower={onScrollToLower}> 
+      <ScrollView scrollY={true} scrollWithAnimation style={{ height: '100%' }} onScrollToLower={onScrollToLower}>
         <GoodsList list={formatList} />
       </ScrollView>
     </View>

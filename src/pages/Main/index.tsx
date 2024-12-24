@@ -29,7 +29,7 @@ const Main = (props) => {
     //   console.log(res.target)
     // }
     return {
-      title: '比莱童园',
+      title: '小火车',
       path: '/pages/Main/index'
     }
   })

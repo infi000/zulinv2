@@ -21,7 +21,7 @@ const SearchRes = () => {
         setFormatList(goods || []);
       });
       Taro.setNavigationBarTitle({
-        title: key || '比莱童园',
+        title: key || '小火车',
       });
     }else{
       const { key,title } = params;
@@ -30,10 +30,10 @@ const SearchRes = () => {
         setFormatList(goods || []);
       });
       Taro.setNavigationBarTitle({
-        title: title || '比莱童园',
+        title: title || '小火车',
       });
     }
-   
+
 
   });
   const onScrollToLower = (e) => {
@@ -42,7 +42,7 @@ const SearchRes = () => {
   };
   return (
     <View className='list-wrap' >
-      <ScrollView scrollY={true} scrollWithAnimation style={{ height: '100%' }} onScrollToLower={onScrollToLower}> 
+      <ScrollView scrollY={true} scrollWithAnimation style={{ height: '100%' }} onScrollToLower={onScrollToLower}>
         <GoodsList list={formatList} />
       </ScrollView>
     </View>

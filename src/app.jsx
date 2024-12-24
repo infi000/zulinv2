@@ -46,7 +46,7 @@ class App extends Component {
         Taro.login()
       },
     });
-    this.update();  
+    this.update();
   }
 
   config = {
@@ -62,7 +62,7 @@ class App extends Component {
         // 'pages/Index/index',
       // 'pages/TaskList/index',
       'pages/LeaseOrderList/index',
-      
+
       'pages/LeaseList/index',
       'pages/Lease/index',
       'pages/LeaseDetail/index',
@@ -87,12 +87,12 @@ class App extends Component {
       // 'pages/Collect/index',
       'pages/SortPage/index',
       'pages/LeaseOrder/Modules/Protocol/index',
-      
+
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: '比莱童园',
+      navigationBarTitleText: '小火车',
       navigationBarTextStyle: 'black',
     },
     subpackages: [

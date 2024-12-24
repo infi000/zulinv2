@@ -10,10 +10,10 @@ const MOCK = 'http://easy-mock.sftcwl.com/mock/5f6a20a67266ef5678785185/wxschool
 const MOCK2 = 'http://easy-mock.sftcwl.com/mock/5f1a8bf410c3f359faddc7df/test';
 const yjw_test = 'https://dev.tangguostore.com/index.php/MiniApi';
 // const yjw = 'https://dev.tangguostore.com';
-const yjw = 'https://beyondplayapi.leclubthallium.com';
+const yjw = 'https://xtblapi.leclubthallium.com';
 const community = 'https://heshenghui.zhiheworld.com';
 
-const WxApiRoot = yjw + '/index.php/MiniApi'; 
+const WxApiRoot = yjw + '/index.php/MiniApi';
 const assetRoot = yjw + '/Public/MiniApi/images'
 // https://www.tangguostore.com/index.php/MiniApi/CC/myowns?openid=oKDX35X2NHYdiZdb8ukgFZmqwM8M
 // https://dev.tangguostore.com/Public/MiniApi/images/jimai.jpg
@@ -33,12 +33,12 @@ export default {
   goodsAllCtype: WxApiRoot + '/Shop/allctype', // 3.	获取商品类型
   goodsDetail: WxApiRoot + '/Shop/detail', // 4.	商品详情
   relatedGoods: WxApiRoot + '/Shop/tjgoods', // 5.	商品关联热门推荐
-  isfav: WxApiRoot + '/User/isfav', // 6.	检测是否已收藏商品	
+  isfav: WxApiRoot + '/User/isfav', // 6.	检测是否已收藏商品
   fav: WxApiRoot + '/User/fav', // 7.	收藏商品
   unfav: WxApiRoot + '/User/unfav', // 8.	删除收藏
-  buysRecord: WxApiRoot + '/Shop/buys', // 9. 获取购买记录	
+  buysRecord: WxApiRoot + '/Shop/buys', // 9. 获取购买记录
   searchOrder: WxApiRoot + '/Order/search', // 11.	我的订单（全部、待付款、待发货、待收货、交易完成）
-  userFavorite: WxApiRoot + '/User/favorite', // 12.	我的收藏	
+  userFavorite: WxApiRoot + '/User/favorite', // 12.	我的收藏
   myAddress: WxApiRoot + '/User/address', // 13.	我的地址
   saveAddress: WxApiRoot + '/User/saveAddress', // 14.	添加新地址
   setDefaultAddress: WxApiRoot + '/User/saveAddress', // 设置默认地址
@@ -91,20 +91,20 @@ export default {
   leaseOrderadd: WxApiRoot + '/Lease/orderadd', // 创建订单
   leaseOrderDetail: WxApiRoot + '/Lease/orderdetail', // 订单详情
   leaseOrderList: WxApiRoot + '/Lease/orders', // 订单列表
-  
+
   leasePrebookjoininfo: WxApiRoot + '/Lease/prebookjoininfo', // 申请加入预约信息
   leasePrebookjoin: WxApiRoot + '/Lease/prebookjoin', // 申请加入预约
   leasePrebookusers: WxApiRoot + '/Lease/prebookusers', // 申请加入预约列表
   leasePrebookpass: WxApiRoot + '/Lease/prebookpass', // 预约申请通过
   leasePrebookunpass: WxApiRoot + '/Lease/prebookunpass', // 预约申请未通过
-  
+
   leasePayInfo: WxApiRoot + '/Lease/orderpay', // 支付信息
   leaseOrderWxcode: WxApiRoot + '/Lease/orderwxcode', // 订单收款二维码
   leasePrebookToolAdd: WxApiRoot + '/Lease/prebooktooladd', // 预约增加工具
   leaseExperimentcondetail: WxApiRoot + '/Lease/experimentcondetail', // 设备详情页面
 
   leasePrebookhistory: WxApiRoot + '/Lease/prebookhistory', // 任务列表
-  
+
   choujiangId:   WxApiRoot + '/Category/cj', //	获取需要跳转抽奖页面的id
   experiments:   WxApiRoot + '/Lease/experiments', //	实验项目列表experiments
   experimentDetail:   WxApiRoot + '/Lease/experimentdetail', //	实验项目
@@ -133,10 +133,10 @@ export default {
   classifySearch: WxApiRoot + '/classify/search', //获取首页数据
   classifyGetexperiments: WxApiRoot + '/classify/getexperiments', //搜索预约设备
   getbg: WxApiRoot + '/User/getbg', //获取设置getbg
-  
+
 
   orderdetailbycode:  WxApiRoot + '/Lease/orderdetailbycode', // 订单详情orderdetailbycode
-  
+
 //   User/agreement
 // 必需参数：
 // registersign:会员入会协议图片；格式base64；数据需包含“data:image/jpeg;base64,”、“data:image/png;base64,”信息
