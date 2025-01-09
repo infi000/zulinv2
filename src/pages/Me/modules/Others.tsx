@@ -13,7 +13,7 @@ const LIST_URL_MAP = [
   // { name: '照片墙', url: '/pages/PhotoWall/index' },
   // { name: '个人中心', url: '/subPackagesMe/UserInfoManage/index', icon: { val: 'user', color: '#FF9800' } },
   // { name: '会员购买', url: '/subPackagesMe/BuyVip/index', icon: huiyuangoumai },
-  { name: '购买次卡', url: '/subPackagesMe/BuyTabi/index', icon: goumaicishu },
+  // { name: '购买次卡', url: '/subPackagesMe/BuyTabi/index', icon: goumaicishu },
   // { name: '寄卖', url: '/subPackages/ConsignmentMenu/index', icon: { val: 'mail', color: '#F44336' } },
   // { name: '收藏', url: '/pages/Collect/index' },
   // { name: '我的藏品', url: '/pages/MyVip/index' },
@@ -127,14 +127,14 @@ const Others = () => {
         <View className='at-col-5 textL'>预约订单</View>
         <View className='at-col-5 textR'><AtIcon value='chevron-right' size='18' /></View>
       </View> */}
-      <View className='at-row me-others-con'>
+      {/* <View className='at-row me-others-con'>
         <Button open-type="contact" className='hideButton'>
           客服
         </Button>
         <View className='at-col-2 textL'> <Image className='me-icon' src={kefu} /></View>
         <View className='at-col-5 textL'>客服</View>
         <View className='at-col-5 textR'><AtIcon value='chevron-right' size='18' /></View>
-      </View>
+      </View> */}
       {/* <View className='at-row me-others-con' onClick={handleTaskList}>
         <View className='at-col-1 textL'><AtIcon value='numbered-list' size='18' color='#2196F3' /></View>
         <View className='at-col-5 textL'>任务中心</View>

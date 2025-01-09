@@ -109,18 +109,18 @@ const GoupiaoDetail = () => {
               立即购买快乐
             </AtButton>
           </View>
-          <View className='btn-submit'>
+          {/* <View className='btn-submit'>
             <AtButton type='primary' size='small' onClick={handleOpen} className='n-color-btn'>
-              小懒腰会员购买
+              会员购买
             </AtButton>
-          </View>
+          </View> */}
 
           <AtButton size='small' onClick={handleCancel}>
             再想想先取消
           </AtButton>
         </View>
       </View>
-      <AtActionSheet isOpened={openModal} title='小懒腰会员' onClose={() => setOpenModal(false)}>
+      <AtActionSheet isOpened={openModal} title='会员' onClose={() => setOpenModal(false)}>
         {discountcard.map((item: any) => {
           return <AtActionSheetItem onClick={() => handleSubmit(item.equity_id)}>
             {`${item.goods_name}/剩余（${item.balance}）`}
