@@ -11,7 +11,8 @@
    padding: 25px 0;
     background-color: #fff;
     height: 100%;
-}.edit-btn-wrap{
+}
+.edit-btn-wrap{
     width: 100%;
     padding: 20px 20px;
     box-sizing: border-box;
@@ -19,3 +20,108 @@
         margin-bottom: 20px;
     }
 }
+
+// 关联卡样式
+.related-cards-section {
+    padding: 30px;
+    border-top: 2px solid #f0f0f0;
+
+    .related-cards-title {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 25px;
+        color: #333;
+        letter-spacing: 1px;
+    }
+
+    .related-cards-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .related-card-item {
+        display: flex;
+        gap: 20px;
+        padding: 25px;
+        background-color: #f9f9f9;
+        border-radius: 12px;
+        border: 2px solid #e8e8e8;
+        position: relative;
+        min-height: 180px;
+
+        .related-card-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .related-card-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+
+            .related-card-name {
+                font-size: 28px;
+                font-weight: 700;
+                color: #000;
+                line-height: 1.4;
+            }
+
+            .related-card-details {
+                font-size: 21px;
+                color: #555;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-weight: 500;
+
+                view {
+                    line-height: 1.6;
+                }
+            }
+
+            .related-card-remark {
+                font-size: 18px;
+                color: #888;
+                margin-top: 8px;
+                font-style: italic;
+            }
+        }
+
+        .related-card-checkbox {
+            display: flex;
+            align-items: center;
+            padding-right: 15px;
+
+            .checkbox {
+                width: 50px;
+                height: 50px;
+                border: 4px solid #ddd;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 28px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                color: white;
+                flex-shrink: 0;
+                background-color: #f5f5f5;
+
+                &.checked {
+                    background-color: #4CAF50;
+                    border-color: #2E7D32;
+                    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+                }
+
+                &:active {
+                    transform: scale(0.92);
+                }
+            }
+        }
+    }
+}
+

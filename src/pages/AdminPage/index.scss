@@ -1,0 +1,666 @@
+.admin-page-wrap {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding-bottom: 40px;
+
+  .admin-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 40px 30px;
+    color: #fff;
+
+    .admin-title {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .admin-subtitle {
+      font-size: 24px;
+      opacity: 0.9;
+    }
+  }
+
+  .admin-tabs {
+    background: #fff;
+    margin: 20px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+
+    .at-tabs__header {
+      background: #fff;
+    }
+
+    .at-tabs__item {
+      font-size: 28px;
+      color: #666;
+
+      &--active {
+        color: #667eea;
+        font-weight: bold;
+      }
+    }
+
+    .at-tabs__underline {
+      background: #667eea;
+    }
+  }
+
+  .tab-content {
+    padding: 20px;
+  }
+
+  // 搜索区域
+  .search-section {
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+
+    .search-input-wrap {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+
+      .at-input {
+        flex: 1;
+        margin-right: 20px;
+        margin-bottom: 0;
+      }
+
+      .search-btn {
+        width: 160px;
+        height: 80px;
+        line-height: 80px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        font-size: 28px;
+      }
+    }
+  }
+
+  // 用户信息卡片
+  .user-info-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+    .user-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #f0f0f0;
+
+      .user-avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-right: 20px;
+        background: #f0f0f0;
+      }
+
+      .user-meta {
+        flex: 1;
+
+        .user-name {
+          font-size: 32px;
+          font-weight: bold;
+          color: #333;
+          margin-bottom: 8px;
+        }
+
+        .user-phone {
+          font-size: 26px;
+          color: #666;
+        }
+      }
+    }
+  }
+
+  // 卡片列表
+  .cards-section {
+    .section-title {
+      font-size: 30px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+      padding-left: 10px;
+      border-left: 6px solid #667eea;
+    }
+
+    .card-item {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+      border: 1px solid #e8e8e8;
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+
+        .card-name {
+          font-size: 30px;
+          font-weight: bold;
+          color: #333;
+        }
+
+        .card-status {
+          padding: 6px 16px;
+          border-radius: 20px;
+          font-size: 22px;
+
+          &.active {
+            background: #e6f7ff;
+            color: #1890ff;
+          }
+
+          &.expired {
+            background: #fff1f0;
+            color: #ff4d4f;
+          }
+        }
+      }
+
+      .card-info {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+
+        .info-item {
+          width: 50%;
+          margin-bottom: 12px;
+
+          .info-label {
+            font-size: 24px;
+            color: #999;
+            margin-bottom: 4px;
+          }
+
+          .info-value {
+            font-size: 28px;
+            color: #333;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .card-actions {
+        display: flex;
+        gap: 16px;
+        padding-top: 16px;
+        border-top: 1px solid #e8e8e8;
+
+        .action-btn {
+          flex: 1;
+          height: 70px;
+          line-height: 70px;
+          font-size: 26px;
+          border-radius: 10px;
+
+          &.check-btn {
+            background: linear-gradient(135deg, #52c41a 0%, #389e0d 100%);
+            color: #fff;
+            border: none;
+          }
+
+          &.refund-btn {
+            background: #fff;
+            color: #ff4d4f;
+            border: 1px solid #ff4d4f;
+          }
+        }
+      }
+    }
+  }
+
+  // 订单列表
+  .orders-section {
+    .section-title {
+      font-size: 30px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+      padding-left: 10px;
+      border-left: 6px solid #667eea;
+    }
+
+    .order-item {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+      .order-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #f0f0f0;
+
+        .order-no {
+          font-size: 24px;
+          color: #999;
+        }
+
+        .order-time {
+          font-size: 24px;
+          color: #999;
+        }
+      }
+
+      .order-content {
+        margin-bottom: 16px;
+
+        .order-info-row {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 12px;
+
+          .info-label {
+            font-size: 26px;
+            color: #666;
+          }
+
+          .info-value {
+            font-size: 26px;
+            color: #333;
+            font-weight: 500;
+
+            &.price {
+              color: #ff4d4f;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .order-actions {
+        display: flex;
+        gap: 16px;
+        padding-top: 16px;
+        border-top: 1px solid #f0f0f0;
+
+        .action-btn {
+          flex: 1;
+          height: 70px;
+          line-height: 70px;
+          font-size: 26px;
+          border-radius: 10px;
+
+          &.full-refund-btn {
+            background: #fff;
+            color: #ff4d4f;
+            border: 1px solid #ff4d4f;
+          }
+
+          &.partial-refund-btn {
+            background: linear-gradient(135deg, #faad14 0%, #d48806 100%);
+            color: #fff;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+
+  // 销售记录列表
+  .sales-section {
+    .sales-item {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border-left: 6px solid #667eea;
+
+      .sales-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #f0f0f0;
+
+        .sales-time-price {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          .sales-time {
+            font-size: 26px;
+            color: #999;
+          }
+
+          .sales-prices {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+
+            .sales-price {
+              font-size: 28px;
+              font-weight: bold;
+
+              &.main-price {
+                color: #ff4d4f;
+                font-size: 32px;
+              }
+
+              &.secondary-price {
+                color: #faad14;
+                font-size: 24px;
+                text-decoration: line-through;
+                opacity: 0.7;
+              }
+            }
+          }
+        }
+      }
+
+      .sales-content {
+        margin-bottom: 20px;
+
+        .card-name {
+          font-size: 30px;
+          font-weight: bold;
+          color: #333;
+          margin-bottom: 16px;
+        }
+
+        .buyer-info-group {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+
+          .buyer-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f5f5f5;
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            .buyer-label {
+              font-size: 24px;
+              color: #999;
+              min-width: 100px;
+              font-weight: 500;
+            }
+
+            .buyer-value {
+              font-size: 26px;
+              color: #333;
+              flex: 1;
+              word-break: break-all;
+            }
+          }
+        }
+      }
+
+      .sales-remark {
+        padding-top: 16px;
+        border-top: 1px solid #f0f0f0;
+
+        .remark-label {
+          font-size: 24px;
+          color: #999;
+          margin-bottom: 8px;
+          font-weight: 500;
+        }
+
+        .remark-content {
+          font-size: 26px;
+          color: #333;
+          background: #f5f5f5;
+          padding: 16px;
+          border-radius: 8px;
+          margin-bottom: 12px;
+          line-height: 1.6;
+        }
+
+        .remark-btn {
+          width: 100%;
+          height: 64px;
+          line-height: 64px;
+          font-size: 26px;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: #fff;
+          border: none;
+          border-radius: 8px;
+          font-weight: 600;
+          transition: all 0.3s ease;
+
+          &:active {
+            opacity: 0.9;
+            transform: scale(0.98);
+          }
+        }
+      }
+    }
+  }
+
+  // 空状态
+  .empty-state {
+    text-align: center;
+    padding: 80px 40px;
+
+    .empty-icon {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 20px;
+    }
+
+    .empty-text {
+      font-size: 28px;
+      color: #999;
+    }
+  }
+
+  // 核销弹窗
+  .check-modal {
+    .modal-title {
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .modal-content {
+      margin-bottom: 30px;
+
+      .check-num-input {
+        margin-bottom: 30px;
+        padding: 25px;
+        background: linear-gradient(135deg, #f5f7ff 0%, #f0f4ff 100%);
+        border-radius: 16px;
+        border: 2px solid #e8eaf6;
+
+        .input-label {
+          font-size: 28px;
+          font-weight: 700;
+          color: #333;
+          margin-bottom: 18px;
+          display: block;
+          text-align: center;
+        }
+
+        .at-input-number {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 16px;
+
+          .at-input-number__btn {
+            width: 70px;
+            height: 70px;
+            font-size: 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+
+            &:active {
+              transform: scale(0.95);
+              box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            }
+          }
+
+          .at-input-number__input {
+            width: 140px;
+            height: 70px;
+            font-size: 32px;
+            text-align: center;
+            border: 2px solid #667eea;
+            border-radius: 12px;
+            font-weight: 700;
+            color: #333;
+          }
+        }
+      }
+
+      .check-info {
+        background: linear-gradient(135deg, #fff5f7 0%, #fff0f5 100%);
+        padding: 25px;
+        border-radius: 16px;
+        border: 2px solid #fce4ec;
+
+        .info-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 18px;
+          padding: 14px 0;
+          border-bottom: 1px solid rgba(244, 67, 54, 0.1);
+
+          &:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+          }
+
+          .label {
+            font-size: 26px;
+            color: #666;
+            font-weight: 600;
+            min-width: 100px;
+          }
+
+          .value {
+            font-size: 28px;
+            color: #333;
+            font-weight: 700;
+            text-align: right;
+            flex: 1;
+
+            // 高亮核销后剩余的数值
+            &:last-of-type {
+              color: #ff4d4f;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 弹窗按钮样式
+  .modal-btn {
+    flex: 1;
+    height: 80px;
+    line-height: 80px;
+    font-size: 28px;
+    border: none;
+    border-radius: 14px;
+    margin: 0 10px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    letter-spacing: 2px;
+
+    &.cancel-btn {
+      background-color: #f5f5f5;
+      color: #666;
+      border: 2px solid #e0e0e0;
+
+      &:active {
+        background-color: #e0e0e0;
+        border-color: #bdbdbd;
+        transform: scale(0.98);
+      }
+    }
+
+    &.confirm-btn {
+      background: linear-gradient(135deg, #1890ff 0%, #0050b3 100%);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(24, 144, 255, 0.3);
+
+      &:active {
+        transform: scale(0.98);
+        box-shadow: 0 6px 20px rgba(24, 144, 255, 0.4);
+      }
+    }
+  }
+
+  // 退款弹窗
+  .refund-modal {
+    .modal-title {
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .refund-cards {
+      margin-bottom: 20px;
+
+      .refund-card-item {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+
+        .card-name {
+          font-size: 28px;
+          font-weight: bold;
+          color: #333;
+          margin-bottom: 12px;
+        }
+
+        .left-count-input {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .refund-amount {
+      margin-bottom: 20px;
+    }
+  }
+
+  // 备注弹窗
+  .remark-modal {
+    .modal-title {
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .remark-input {
+      margin-bottom: 20px;
+    }
+  }
+}

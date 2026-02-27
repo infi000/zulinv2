@@ -168,4 +168,12 @@ export default {
   getPicketCheckedList: WxApiRoot + '/Picket/checkedlist',
   getCardDetail: WxApiRoot + '/Card/detail',
   getDiscountcardList: WxApiRoot + '/User/getDiscountcardList',
+
+  // 管理员相关接口
+  adminUserCards: WxApiRoot + '/User/usercards', // 用户卡查询接口 - 参数phone
+  adminCheckCard: WxApiRoot + '/User/check', // 用户卡核销接口 - 参数uid, cid, checknum
+  adminBuySearch: WxApiRoot + '/User/buysearch', // 当日充卡记录接口
+  adminSetCardRemark: WxApiRoot + '/User/setcardremark', // 充卡备注接口 - 参数cid, remark
+  adminUserCardOrders: WxApiRoot + '/Card/usercardorders', // 用户购卡订单接口 - 参数odate
+  adminUserCardOrderRefund: WxApiRoot + '/Card/usercardorderrefund', // 用户卡订单退款 - 参数oid, money, usercardleft
 };

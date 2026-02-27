@@ -85,5 +85,8 @@
     "stylelint-config-taro-rn": "2.2.9",
     "stylelint-taro-rn": "2.2.9",
     "typescript": "^3.0.1"
+  },
+    "volta": {
+    "node": "12.12.0"
   }
 }

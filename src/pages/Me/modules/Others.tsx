@@ -122,6 +122,14 @@ const Others = () => {
           <View className='at-col-5 textR'><AtIcon value='chevron-right' size='18' /></View>
         </View>
       }
+      {/* // ut: 1不可验票，2可验票（管理员权限）\ */}
+      {
+        userInfo.ut === '2' && <View className='at-row me-others-con' onClick={() => handleClickItem('/pages/AdminPage/index')}>
+          <View className='at-col-2 textL'> <Image className='me-icon' src={kefu} /></View>
+          <View className='at-col-5 textL'>管理员页面</View>
+          <View className='at-col-5 textR'><AtIcon value='chevron-right' size='18' /></View>
+        </View>
+      }
       {/* <View className='at-row me-others-con' onClick={handleLeaseOrder}>
         <View className='at-col-2 textL'> <Image className='me-icon' src={yuyuedingdan} /></View>
         <View className='at-col-5 textL'>预约订单</View>

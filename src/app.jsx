@@ -53,6 +53,8 @@ class App extends Component {
     pages: [
 
         'pages/Main/index',
+               'pages/AdminPage/index',
+
         'pages/GoupiaoDetail/index',
         'pages/GoodGoods/index',
         'pages/PicketMallResult/index',
