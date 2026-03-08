@@ -52,13 +52,13 @@ const ListItem = (props: IProps) => {
                     </View>
                   </View>
                 )}
-                {orderStatus == '1' && ischoujiang == '1' && (
+                {/* {orderStatus == '1' && ischoujiang == '1' && (
                   <View className='list-item-btn-con'>
                     <View className='btn-default' style='margin-right:10px' onClick={() => handlePageToChangeAddrId(orderid)}>
                       修改地址
                     </View>
                   </View>
-                )}
+                )} */}
                 {orderStatus == '2' && (
                   <View className='list-item-btn-con'>
                     <View className='btn-default' style='margin-right:10px' onClick={() => handleCompletelOrder(orderid, status)}>

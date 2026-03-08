@@ -72,6 +72,7 @@ const AdminPage = () => {
 
   // ============ 用户查询核销模块状态 ============
   const [searchPhone, setSearchPhone] = useState('');
+  const [userData, setUserData] = useState<UserInfo | null>(null);
   const [userCards, setUserCards] = useState<UserCard[]>([]);
   const [userOrders, setUserOrders] = useState<Order[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -109,6 +110,7 @@ const AdminPage = () => {
     try {
       const res = await getUserCards({ phone: searchPhone });
       if (res) {
+        setUserData(res.user || null);
         setUserCards(res.cards || []);
         // 同时查询今日订单
         fetchUserOrders();
@@ -357,11 +359,11 @@ const AdminPage = () => {
               </View>
 
               {/* 用户信息 */}
-              {userCards ? (
+              {userData ? (
                 <View className='user-info-card'>
                   <View className='user-header'>
                     <View className='user-meta'>
-                      <View className='user-phone'>{userCards.phone}</View>
+                      <View className='user-phone'>{userData.phone}</View>
                     </View>
                   </View>
                 </View>
@@ -449,13 +451,13 @@ const AdminPage = () => {
               ) : null}
 
               {/* 空状态 */}
-              {!isLoading && !userCards ? (
+              {!isLoading && !userData ? (
                 <View className='empty-state'>
                   <Text className='empty-text'>请输入手机号搜索用户</Text>
                 </View>
               ) : null}
 
-              {userCards && userCards.length === 0 && userOrders.length === 0 ? (
+              {userData && userCards.length === 0 && userOrders.length === 0 ? (
                 <View className='empty-state'>
                   <Text className='empty-text'>该用户暂无卡片和订单</Text>
                 </View>
@@ -497,6 +499,10 @@ const AdminPage = () => {
                           <Text className='buyer-label'>手机:</Text>
                           <Text className='buyer-value'>{sale.buyerphone}</Text>
                         </View>
+                        <View className='buyer-item'>
+                          <Text className='buyer-label'>备注:</Text>
+                          <Text className='buyer-value'>{sale.cardremark}</Text>
+                        </View>
                       </View>
                     </View>
                     <View className='sales-remark'>
@@ -525,7 +531,13 @@ const AdminPage = () => {
       </View>
 
       {/* 核销弹窗 */}
-      <AtModal isOpened={checkModalOpen} onClose={() => setCheckModalOpen(false)}>
+      {
+        checkModalOpen && (
+               <AtModal isOpened={checkModalOpen} onClose={() => {
+        setCheckModalOpen(false);
+        setSelectedCard(null);
+        setCheckNum(1);
+      }}>
         <AtModalHeader>核销确认</AtModalHeader>
         <AtModalContent>
           <View className='check-modal'>
@@ -574,9 +586,19 @@ const AdminPage = () => {
           }}>确认核销</Button>
         </AtModalAction>
       </AtModal>
+        )
+      }
+
 
       {/* 退款弹窗 */}
-      <AtModal isOpened={refundModalOpen} onClose={() => setRefundModalOpen(false)}>
+      {
+        refundModalOpen && (
+    <AtModal isOpened={refundModalOpen} onClose={() => {
+        setRefundModalOpen(false);
+        setSelectedOrder(null);
+        setCardLeftCounts({});
+        setRefundAmount('');
+      }}>
         <AtModalHeader>订单退款</AtModalHeader>
         <AtModalContent>
           <View className='refund-modal'>
@@ -612,9 +634,18 @@ const AdminPage = () => {
           <Button onClick={handleConfirmRefund}>确认退款</Button>
         </AtModalAction>
       </AtModal>
+        )
+      }
+
 
       {/* 备注弹窗 */}
-      <AtModal isOpened={remarkModalOpen} onClose={() => setRemarkModalOpen(false)}>
+      {
+        remarkModalOpen && (
+               <AtModal isOpened={remarkModalOpen} onClose={() => {
+        setRemarkModalOpen(false);
+        setSelectedSale(null);
+        setRemarkInput('');
+      }}>
         <AtModalHeader>编辑备注</AtModalHeader>
         <AtModalContent>
           <View className='remark-modal'>
@@ -633,6 +664,9 @@ const AdminPage = () => {
           <Button onClick={handleSaveRemark}>保存</Button>
         </AtModalAction>
       </AtModal>
+        )
+      }
+
     </View>
   );
 };
